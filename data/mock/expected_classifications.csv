@@ -1,0 +1,41 @@
+source_id,source_type,category,priority,technical_details,suggested_title
+R001,app_store_review,Bug,High,"Pixel 7, Android 14, settings page crash, v3.2.1",App crashes on settings page after update
+R002,app_store_review,Praise,Low,,Positive feedback on task management feature
+R003,app_store_review,Bug,Critical,"Login failure, password reset not working, spinning loader, v3.2.1",Login broken after v3.2.1 update
+R004,app_store_review,Feature Request,Medium,,Add dark mode option
+R005,app_store_review,Bug,Critical,"Data sync broken, web to mobile, tasks missing, v3.2.1",Data sync failure between web and mobile
+R006,app_store_review,Praise,Low,,Positive review praising UI and value
+R007,app_store_review,Feature Request,Medium,,Add PDF export for tasks
+R008,app_store_review,Bug,High,"iPhone 14 Pro, iOS 17.3, 10+ second load time, v3.2.1",Dashboard loading extremely slow after update
+R009,app_store_review,Feature Request,Medium,,Google Calendar integration
+R010,app_store_review,Complaint,Medium,,Customer service unresponsive to billing issue
+R011,app_store_review,Praise,Low,,Positive feedback on collaboration features
+R012,app_store_review,Feature Request,Medium,,Add recurring tasks functionality
+R013,app_store_review,Bug,High,"Samsung Galaxy S23, Android 14, image attachment crash, v3.2.1",App crashes when attaching images to tasks
+R014,app_store_review,Feature Request,Low,,Add Siri shortcuts support
+R015,app_store_review,Bug,High,"Notifications not firing, missed deadlines, v3.2.0",Notification reminders unreliable
+R016,app_store_review,Praise,Low,,Positive feedback on premium analytics
+R017,app_store_review,Spam,Low,,Spam promotional content
+R018,app_store_review,Complaint,Low,,Pricing complaint compared to competitors
+R019,app_store_review,Feature Request,Medium,,Android home screen widget support
+R020,app_store_review,Bug,Critical,"Complete data loss after update, v3.2.1",All user data lost after app update
+R021,app_store_review,Praise,Low,,Positive comparison vs competitor
+R022,app_store_review,Bug,High,"30% battery drain daily, background processes, v3.2.1",Excessive battery consumption
+R023,app_store_review,Spam,Low,,Gibberish/random text
+R024,app_store_review,Feature Request,Medium,,Built-in Pomodoro timer
+R025,app_store_review,Bug,High,"Pixel 8, Android 14, search returns no results, v3.2.1",Search function not returning results
+E001,support_email,Bug,Critical,"iPad Air 5th gen, iPadOS 17.3, crash on launch, v3.2.1",App crashes on launch on iPad
+E002,support_email,Feature Request,Medium,,Dark mode feature request
+E003,support_email,Bug,Critical,"Samsung Galaxy S24 Ultra, Android 14, authentication failed, v3.2.1",Authentication failure after update
+E004,support_email,Feature Request,Medium,,Task dependencies feature
+E005,support_email,Bug,Critical,"MacBook Pro M3, Chrome, all projects deleted, enterprise plan",Complete data loss for enterprise user
+E006,support_email,Praise,Low,,Positive feedback about support agent
+E007,support_email,Complaint,High,"Duplicate billing, 2 charges of $9.99",Duplicate subscription charge
+E008,support_email,Feature Request,High,,API access for enterprise integration
+E009,support_email,Bug,High,"iPhone 15 iOS 17.2 + Chrome Windows 11, sync broken, v3.2.1",Cross-device sync failure
+E010,support_email,Spam,Low,,Spam partnership solicitation
+E011,support_email,Bug,High,"Pixel 7a, Android 14, freeze on task creation, v3.2.0",App freezes when creating tasks with due dates
+E012,support_email,Feature Request,Medium,,Team manager dashboard
+E013,support_email,Complaint,Medium,,Mobile app quality complaint
+E014,support_email,Bug,High,"OnePlus 12, Android 14, notifications 2-3 hours late, v3.2.1",Notification delivery delayed by hours
+E015,support_email,Feature Request,Low,,CSV import for bulk task creation

@@ -1,4 +1,4 @@
-test the Streamlit app using Playwright MCP in Chrome, and I'll:
+test the Streamlit app using Playwright MCP in Chrome:
   - Navigate to http://localhost:8501
   - Take snapshots of each page
   - Upload the mock CSV and trigger processing
@@ -7,7 +7,7 @@ test the Streamlit app using Playwright MCP in Chrome, and I'll:
 
 ---------------------
 
-  Read and understand the entire codebase in this project directory. Then create the following markdown documentation files in the documentation/ folder:
+Read and understand the entire codebase in this project directory. Then create the following markdown documentation files in the @documentation/ folder:
 
   1. **documentation/project_overview.md** — High-level summary of the project: what it does, the business problem it solves, the 6-agent architecture,
   tech stack (LangChain + LangGraph, OpenAI GPT-5.4, FastMCP, SQLite, Streamlit, Langfuse), and a system architecture diagram in ASCII/mermaid showing the
@@ -45,3 +45,46 @@ test the Streamlit app using Playwright MCP in Chrome, and I'll:
 
 ------------------------------------------
 
+Create a complete demo showing:
+1.  **Data ingestion** from your mock CSV files
+2.  **Real-time processing** with agent interactions
+3.  **Classification accuracy** compared to expected results
+4.  **Ticket generation** with proper formatting
+5.  **User interface** functionality and monitoring
+6.  **Error handling** and edge case management
+
+------------------------------------------
+
+I want you to create multiple markdown files in the @documentation/ folder. The markdown files should have complete details about the project.
+  Also create any mermaid diagrams in the markdown files or plant-uml diagrams to better explain the project, the workflow, etc. Also, I want you
+  to create a separate markdown file in this folder which explains the agent, Langchain, langgraph, Agent Transitions - all in a narrative format
+  that I can Read and understand because I'm learning all these technologies and agentic design patterns.
+
+Also, you may refer to the screenshots mentioned here stored in @test_screenshots/ folder as I have tested All five pages successfully:
+
+  ┌─────┬────────────────┬────────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────┐
+  │  #  │      Page      │                                 Status                                 │                 Screenshot                 │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 1   │ Home           │ All metrics render, sidebar navigation works                           │ 01_home_page.png,                          │
+  │     │                │                                                                        │ 10_home_after_processing.png               │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 2   │ Upload &       │ File upload, source type radio, Process CSV button all functional      │ 02_upload_page.png, 03_file_uploaded.png   │
+  │     │ Process        │                                                                        │                                            │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 3   │ Processing     │ Auto-detected CSV type, progress bar, 25/25 items processed, 25        │ 04_processing_complete.png                 │
+  │     │                │ tickets created                                                        │                                            │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 4   │ Dashboard      │ All 25 tickets displayed with categories, priorities, expandable       │ 05_dashboard_all_tickets.png,              │
+  │     │                │ details, manual override controls (Save/Approve/Reject)                │ 06_ticket_detail_expanded.png              │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 5   │ Analytics      │ 6 charts rendered (category bar+pie, priority, quality histogram,      │ 07_analytics_page.png,                     │
+  │     │                │ agent latency, confusion matrix), 100% classification accuracy         │ 08_analytics_full.png                      │
+  ├─────┼────────────────┼────────────────────────────────────────────────────────────────────────┼────────────────────────────────────────────┤
+  │ 6   │ Configuration  │ API key status, sliders, connection test buttons, model settings       │ 09_configuration_page.png                  │
+  └─────┴────────────────┴────────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────┘
+
+------------------------------------------
+
+------------------------------------------
+
+------------------------------------------

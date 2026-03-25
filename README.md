@@ -28,6 +28,18 @@ CSV Upload / Manual Input (Streamlit)
 
 Agents communicate with the ticket database through an **MCP server** running on SSE transport (`localhost:8765`). The ticket creator and quality critic use ReAct-style tool-calling to create, update, and query tickets autonomously.
 
+### Why Hybrid Supervisor?
+
+LangGraph supports a spectrum of multi-agent routing patterns, each with different tradeoffs:
+
+| Pattern | How it works | Tradeoff |
+|---|---|---|
+| **Sequential** | `A → B → C → D` — all edges hardcoded | Simple but inflexible; can't skip steps or reroute based on content |
+| **Full Supervisor** | Every node returns to a central supervisor LLM, which picks the next step | Maximum flexibility but expensive — requires an LLM call at every transition (6-8x per item) |
+| **Hybrid Supervisor** | Deterministic edges where the flow is obvious, LLM routing only at genuine decision points | Best balance of flexibility and cost — supervisor is called only 2x per item |
+
+This project uses the **hybrid** approach. Transitions like `classify → supervisor` or `bug_analyzer → ticket_creator` are always the same, so they're hardcoded edges — no point paying for an LLM call to decide something predetermined. The supervisor only activates at the two points where the decision genuinely depends on content: routing to the right analyzer after classification, and deciding whether a ticket passes quality review.
+
 ### Tech Stack
 
 | Component | Technology |

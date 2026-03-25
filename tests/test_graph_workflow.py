@@ -1,8 +1,7 @@
 """Tests for the LangGraph workflow routing logic."""
 
 from src.graph.workflow import (
-    route_after_classification,
-    route_after_review,
+    route_from_supervisor,
     route_next_or_end,
 )
 
@@ -24,64 +23,32 @@ def _make_state(**overrides):
         "error_message": None,
         "revision_count": 0,
         "completed_tickets": [],
+        "messages": [],
+        "next_agent": "",
+        "supervisor_reasoning": "",
     }
     base.update(overrides)
     return base
 
 
-class TestRouteAfterClassification:
-    def test_routes_bug(self):
-        state = _make_state(
-            classification={"category": "Bug", "confidence": 0.9, "reasoning": ""}
-        )
-        assert route_after_classification(state) == "bug_analyze"
+class TestRouteFromSupervisor:
+    """Tests for the supervisor routing edge function."""
 
-    def test_routes_feature_request(self):
-        state = _make_state(
-            classification={"category": "Feature Request", "confidence": 0.9, "reasoning": ""}
-        )
-        assert route_after_classification(state) == "feature_extract"
+    def test_routes_to_bug_analyzer(self):
+        state = _make_state(next_agent="bug_analyzer")
+        assert route_from_supervisor(state) == "bug_analyzer"
 
-    def test_routes_praise_to_ticket(self):
-        state = _make_state(
-            classification={"category": "Praise", "confidence": 0.9, "reasoning": ""}
-        )
-        assert route_after_classification(state) == "create_ticket"
+    def test_routes_to_feature_extractor(self):
+        state = _make_state(next_agent="feature_extractor")
+        assert route_from_supervisor(state) == "feature_extractor"
 
-    def test_routes_complaint_to_ticket(self):
-        state = _make_state(
-            classification={"category": "Complaint", "confidence": 0.9, "reasoning": ""}
-        )
-        assert route_after_classification(state) == "create_ticket"
+    def test_routes_to_ticket_creator(self):
+        state = _make_state(next_agent="ticket_creator")
+        assert route_from_supervisor(state) == "ticket_creator"
 
-    def test_routes_spam_to_ticket(self):
-        state = _make_state(
-            classification={"category": "Spam", "confidence": 0.9, "reasoning": ""}
-        )
-        assert route_after_classification(state) == "create_ticket"
-
-
-class TestRouteAfterReview:
-    def test_approved_goes_to_finalize(self):
-        state = _make_state(
-            quality_review={"approved": True, "score": 8.5, "notes": ""},
-            revision_count=0,
-        )
-        assert route_after_review(state) == "finalize"
-
-    def test_rejected_goes_to_create_ticket(self):
-        state = _make_state(
-            quality_review={"approved": False, "score": 5.0, "notes": ""},
-            revision_count=0,
-        )
-        assert route_after_review(state) == "create_ticket"
-
-    def test_max_revisions_forces_finalize(self):
-        state = _make_state(
-            quality_review={"approved": False, "score": 5.0, "notes": ""},
-            revision_count=2,  # At max
-        )
-        assert route_after_review(state) == "finalize"
+    def test_routes_to_finalize(self):
+        state = _make_state(next_agent="finalize")
+        assert route_from_supervisor(state) == "finalize"
 
 
 class TestRouteNextOrEnd:

@@ -3,22 +3,9 @@
 import json
 from unittest.mock import MagicMock, patch
 
-import pytest
+from langchain_core.messages import AIMessage
 
 from src.agents.bug_analyzer import create_bug_analyze_node
-
-_db_patches = [
-    patch("src.agents.bug_analyzer.update_feedback_status"),
-    patch("src.agents.bug_analyzer.log_processing"),
-]
-
-
-@pytest.fixture(autouse=True)
-def mock_db():
-    mocks = [p.start() for p in _db_patches]
-    yield mocks
-    for p in _db_patches:
-        p.stop()
 
 
 def _make_bug_state():
@@ -52,23 +39,29 @@ def _make_bug_state():
 
 
 class TestBugAnalyzer:
-    def test_extracts_technical_details(self):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(
-            content=json.dumps({
-                "severity": "Major",
-                "affected_component": "Settings",
-                "platform_details": {"device": "Pixel 7", "os": "Android 14", "app_version": "3.2.1"},
-                "steps_to_reproduce": ["Open app", "Navigate to settings"],
-                "expected_behavior": "Settings page loads",
-                "actual_behavior": "App crashes",
-                "suggested_title": "Settings page crash on Pixel 7",
-                "suggested_priority": "High",
-                "suggested_actions": ["Reproduce on Pixel 7", "Check crash logs"],
-            })
-        )
+    @patch("src.agents.bug_analyzer.update_feedback_status")
+    @patch("src.agents.bug_analyzer.log_processing")
+    @patch("src.agents.bug_analyzer.create_agent")
+    def test_extracts_technical_details(self, mock_create_agent, mock_log, mock_status):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [
+                AIMessage(content=json.dumps({
+                    "severity": "Major",
+                    "affected_component": "Settings",
+                    "platform_details": {"device": "Pixel 7", "os": "Android 14", "app_version": "3.2.1"},
+                    "steps_to_reproduce": ["Open app", "Navigate to settings"],
+                    "expected_behavior": "Settings page loads",
+                    "actual_behavior": "App crashes",
+                    "suggested_title": "Settings page crash on Pixel 7",
+                    "suggested_priority": "High",
+                    "suggested_actions": ["Reproduce on Pixel 7", "Check crash logs"],
+                }))
+            ]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        analyze = create_bug_analyze_node(mock_llm)
+        analyze = create_bug_analyze_node(MagicMock())
         result = analyze(_make_bug_state())
 
         assert result["analysis"]["technical_details"]["severity"] == "Major"
@@ -76,11 +69,17 @@ class TestBugAnalyzer:
         assert result["analysis"]["feature_details"] is None
         assert result["current_agent"] == "bug_analyzer"
 
-    def test_handles_invalid_json(self):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(content="broken json")
+    @patch("src.agents.bug_analyzer.update_feedback_status")
+    @patch("src.agents.bug_analyzer.log_processing")
+    @patch("src.agents.bug_analyzer.create_agent")
+    def test_handles_invalid_json(self, mock_create_agent, mock_log, mock_status):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [AIMessage(content="broken json")]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        analyze = create_bug_analyze_node(mock_llm)
+        analyze = create_bug_analyze_node(MagicMock())
         result = analyze(_make_bug_state())
 
         # Should fall back to reasonable defaults

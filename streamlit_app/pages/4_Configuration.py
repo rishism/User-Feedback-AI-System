@@ -98,6 +98,25 @@ max_revisions = st.number_input(
 
 st.markdown("---")
 
+# --- Agentic Pipeline Settings ---
+st.subheader("Agentic Pipeline Settings")
+
+max_iterations = st.number_input(
+    "Max Agent Iterations",
+    min_value=2,
+    max_value=10,
+    value=settings.max_agent_iterations,
+    help="Maximum ReAct loop iterations per agent. Higher = more autonomous but slower/costlier.",
+)
+
+st.info(
+    "This system uses a **hybrid supervisor + ReAct agent** architecture. "
+    "The LLM supervisor routes feedback between specialist agents, and each agent "
+    "autonomously calls tools (MCP, database) via tool-use."
+)
+
+st.markdown("---")
+
 # --- Model Settings ---
 st.subheader("Model Settings")
 

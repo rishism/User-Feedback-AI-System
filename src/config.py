@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     quality_auto_approve_threshold: float = 7.0
     max_revision_count: int = 2
 
+    # Agentic pipeline
+    max_agent_iterations: int = 5
+
     # App
     log_level: str = "INFO"
 

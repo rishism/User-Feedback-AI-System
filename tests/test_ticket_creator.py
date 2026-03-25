@@ -3,6 +3,8 @@
 import json
 from unittest.mock import MagicMock, patch
 
+from langchain_core.messages import AIMessage, ToolMessage
+
 from src.agents.ticket_creator import create_ticket_node
 
 
@@ -47,39 +49,55 @@ def _make_ticket_state():
 
 
 class TestTicketCreator:
-    @patch("src.agents.ticket_creator.insert_ticket")
-    @patch("src.agents.ticket_creator.generate_ticket_id", return_value="TKT-20260323-001")
-    @patch("src.agents.ticket_creator.update_feedback_status")
-    @patch("src.agents.ticket_creator.log_processing")
-    def test_creates_ticket(self, mock_log, mock_status, mock_gen_id, mock_insert):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(
-            content=json.dumps({
-                "title": "[Bug] Settings page crash on Android",
-                "description": "The app crashes when opening settings.",
-                "priority": "High",
-            })
+    @patch("src.agents.ticket_creator.create_agent")
+    def test_creates_ticket(self, mock_create_agent):
+        # Simulate a ReAct agent that calls create_ticket tool and gets a result
+        tool_call_msg = AIMessage(
+            content="",
+            tool_calls=[{
+                "name": "create_ticket",
+                "id": "call_1",
+                "args": {
+                    "feedback_id": 1,
+                    "category": "Bug",
+                    "confidence": 0.95,
+                    "title": "[Bug] Settings page crash on Android",
+                    "description": "The app crashes when opening settings.",
+                    "priority": "High",
+                },
+            }],
         )
+        tool_result_msg = ToolMessage(
+            content=json.dumps({"ticket_id": "TKT-20260323-001", "status": "created"}),
+            name="create_ticket",
+            tool_call_id="call_1",
+        )
+        final_msg = AIMessage(content="Created ticket TKT-20260323-001.")
 
-        create_ticket = create_ticket_node(mock_llm, use_mcp=False)
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [tool_call_msg, tool_result_msg, final_msg]
+        }
+        mock_create_agent.return_value = mock_agent
+
+        create_ticket = create_ticket_node(MagicMock())
         result = create_ticket(_make_ticket_state())
 
         assert result["ticket"]["ticket_id"] == "TKT-20260323-001"
         assert result["ticket"]["title"] == "[Bug] Settings page crash on Android"
         assert result["current_agent"] == "ticket_creator"
-        mock_insert.assert_called_once()
 
-    @patch("src.agents.ticket_creator.insert_ticket")
-    @patch("src.agents.ticket_creator.generate_ticket_id", return_value="TKT-20260323-002")
-    @patch("src.agents.ticket_creator.update_feedback_status")
-    @patch("src.agents.ticket_creator.log_processing")
-    def test_handles_invalid_json(self, mock_log, mock_status, mock_gen_id, mock_insert):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(content="not json")
+    @patch("src.agents.ticket_creator.create_agent")
+    def test_handles_agent_error(self, mock_create_agent):
+        # Simulate agent raising an exception
+        mock_agent = MagicMock()
+        mock_agent.invoke.side_effect = RuntimeError("Agent failed")
+        mock_create_agent.return_value = mock_agent
 
-        create_ticket = create_ticket_node(mock_llm, use_mcp=False)
+        create_ticket = create_ticket_node(MagicMock())
         result = create_ticket(_make_ticket_state())
 
         # Should fall back to default ticket
-        assert result["ticket"]["ticket_id"] == "TKT-20260323-002"
+        assert result["ticket"]["ticket_id"] == "UNKNOWN"
         assert "[Bug]" in result["ticket"]["title"]
+        assert result["ticket"]["priority"] == "Medium"

@@ -3,22 +3,9 @@
 import json
 from unittest.mock import MagicMock, patch
 
-import pytest
+from langchain_core.messages import AIMessage
 
 from src.agents.feature_extractor import create_feature_extract_node
-
-_db_patches = [
-    patch("src.agents.feature_extractor.update_feedback_status"),
-    patch("src.agents.feature_extractor.log_processing"),
-]
-
-
-@pytest.fixture(autouse=True)
-def mock_db():
-    mocks = [p.start() for p in _db_patches]
-    yield mocks
-    for p in _db_patches:
-        p.stop()
 
 
 def _make_feature_state():
@@ -52,33 +39,45 @@ def _make_feature_state():
 
 
 class TestFeatureExtractor:
-    def test_extracts_feature_details(self):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(
-            content=json.dumps({
-                "feature_name": "Dark Mode",
-                "description": "User wants a dark color theme to reduce eye strain at night.",
-                "user_impact": "High",
-                "demand_signal": "Strong",
-                "existing_alternatives": "None in-app",
-                "suggested_title": "Add dark mode option",
-                "suggested_priority": "Medium",
-                "suggested_actions": ["Design dark theme", "Add toggle in settings"],
-            })
-        )
+    @patch("src.agents.feature_extractor.update_feedback_status")
+    @patch("src.agents.feature_extractor.log_processing")
+    @patch("src.agents.feature_extractor.create_agent")
+    def test_extracts_feature_details(self, mock_create_agent, mock_log, mock_status):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [
+                AIMessage(content=json.dumps({
+                    "feature_name": "Dark Mode",
+                    "description": "User wants a dark color theme to reduce eye strain at night.",
+                    "user_impact": "High",
+                    "demand_signal": "Strong",
+                    "existing_alternatives": "None in-app",
+                    "suggested_title": "Add dark mode option",
+                    "suggested_priority": "Medium",
+                    "suggested_actions": ["Design dark theme", "Add toggle in settings"],
+                }))
+            ]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        extract = create_feature_extract_node(mock_llm)
+        extract = create_feature_extract_node(MagicMock())
         result = extract(_make_feature_state())
 
         assert result["analysis"]["feature_details"]["feature_name"] == "Dark Mode"
         assert result["analysis"]["technical_details"] is None
         assert result["current_agent"] == "feature_extractor"
 
-    def test_handles_invalid_json(self):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(content="not json")
+    @patch("src.agents.feature_extractor.update_feedback_status")
+    @patch("src.agents.feature_extractor.log_processing")
+    @patch("src.agents.feature_extractor.create_agent")
+    def test_handles_invalid_json(self, mock_create_agent, mock_log, mock_status):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [AIMessage(content="not json")]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        extract = create_feature_extract_node(mock_llm)
+        extract = create_feature_extract_node(MagicMock())
         result = extract(_make_feature_state())
 
         assert result["analysis"]["feature_details"]["feature_name"] == "Unknown Feature"

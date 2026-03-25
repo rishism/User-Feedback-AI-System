@@ -1,7 +1,10 @@
 """LangGraph pipeline state definition."""
 
 import operator
-from typing import Annotated, Optional, TypedDict
+from typing import Annotated, Any, Optional, TypedDict
+
+from langchain_core.messages import AnyMessage
+from langgraph.graph.message import add_messages
 
 
 class FeedbackItemState(TypedDict):
@@ -51,3 +54,8 @@ class PipelineState(TypedDict):
 
     # Accumulator for completed tickets
     completed_tickets: Annotated[list[str], operator.add]  # ticket_ids
+
+    # Agentic flow fields
+    messages: Annotated[list[AnyMessage], add_messages]  # ReAct + supervisor message history
+    next_agent: str  # supervisor's routing decision
+    supervisor_reasoning: str  # supervisor's explanation (displayed in UI)

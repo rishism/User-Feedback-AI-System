@@ -3,6 +3,8 @@
 import json
 from unittest.mock import MagicMock, patch
 
+from langchain_core.messages import AIMessage
+
 from src.agents.quality_critic import create_quality_review_node
 
 
@@ -49,63 +51,66 @@ def _make_review_state(revision_count=0):
 
 
 class TestQualityCritic:
-    @patch("src.agents.quality_critic.update_ticket")
-    @patch("src.agents.quality_critic.update_feedback_status")
-    @patch("src.agents.quality_critic.log_processing")
-    def test_approves_good_ticket(self, mock_log, mock_status, mock_update):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(
-            content=json.dumps({
-                "score": 8.5,
-                "breakdown": {
-                    "title_clarity": 2,
-                    "description_completeness": 2.5,
-                    "priority_accuracy": 2,
-                    "technical_accuracy": 1.5,
-                    "actionability": 0.5,
-                },
-                "approved": True,
-                "notes": "Good ticket with clear details.",
-                "revision_suggestions": [],
-            })
-        )
+    @patch("src.agents.quality_critic.create_agent")
+    def test_approves_good_ticket(self, mock_create_agent):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [
+                AIMessage(content=json.dumps({
+                    "score": 8.5,
+                    "breakdown": {
+                        "title_clarity": 2,
+                        "description_completeness": 2.5,
+                        "priority_accuracy": 2,
+                        "technical_accuracy": 1.5,
+                        "actionability": 0.5,
+                    },
+                    "approved": True,
+                    "notes": "Good ticket with clear details.",
+                    "revision_suggestions": [],
+                }))
+            ]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        review = create_quality_review_node(mock_llm)
+        review = create_quality_review_node(MagicMock())
         result = review(_make_review_state())
 
         assert result["quality_review"]["approved"] is True
         assert result["quality_review"]["score"] == 8.5
         assert result["revision_count"] == 0
 
-    @patch("src.agents.quality_critic.update_ticket")
-    @patch("src.agents.quality_critic.update_feedback_status")
-    @patch("src.agents.quality_critic.log_processing")
-    def test_rejects_poor_ticket(self, mock_log, mock_status, mock_update):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(
-            content=json.dumps({
-                "score": 5.0,
-                "breakdown": {},
-                "approved": False,
-                "notes": "Missing reproduction steps.",
-                "revision_suggestions": ["Add steps to reproduce"],
-            })
-        )
+    @patch("src.agents.quality_critic.create_agent")
+    def test_rejects_poor_ticket(self, mock_create_agent):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [
+                AIMessage(content=json.dumps({
+                    "score": 5.0,
+                    "breakdown": {},
+                    "approved": False,
+                    "notes": "Missing reproduction steps.",
+                    "revision_suggestions": ["Add steps to reproduce"],
+                }))
+            ]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        review = create_quality_review_node(mock_llm)
+        review = create_quality_review_node(MagicMock())
         result = review(_make_review_state())
 
         assert result["quality_review"]["approved"] is False
         assert result["revision_count"] == 1
 
-    @patch("src.agents.quality_critic.update_ticket")
-    @patch("src.agents.quality_critic.update_feedback_status")
-    @patch("src.agents.quality_critic.log_processing")
-    def test_handles_invalid_json(self, mock_log, mock_status, mock_update):
-        mock_llm = MagicMock()
-        mock_llm.invoke.return_value = MagicMock(content="not json")
+    @patch("src.agents.quality_critic.create_agent")
+    def test_handles_invalid_json(self, mock_create_agent):
+        mock_agent = MagicMock()
+        mock_agent.invoke.return_value = {
+            "messages": [AIMessage(content="not json")]
+        }
+        mock_create_agent.return_value = mock_agent
 
-        review = create_quality_review_node(mock_llm)
+        review = create_quality_review_node(MagicMock())
         result = review(_make_review_state())
 
         # Auto-approves on parse error

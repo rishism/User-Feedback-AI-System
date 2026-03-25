@@ -95,6 +95,11 @@ def process_feedback(feedback_items: list[FeedbackItem]):
 
         msg = f"**{agent}** — {status}"
 
+        # Supervisor reasoning (agentic routing decisions)
+        reasoning = update.get("supervisor_reasoning", "")
+        if reasoning and agent == "supervisor":
+            msg += f" | Routing: {reasoning}"
+
         classification = update.get("classification")
         if classification and agent == "classifier":
             msg += f" | Category: {classification['category']} (confidence: {classification['confidence']:.2f})"

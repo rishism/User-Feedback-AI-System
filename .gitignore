@@ -34,3 +34,10 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Personal notes and screenshots
+.ignore_notes/
+.remember/
+test_screenshots/
+my_project_initial_requirements.md
+more-requirements.txt

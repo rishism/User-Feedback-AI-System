@@ -1,0 +1,657 @@
+ticket_id,feedback_id,category,confidence,title,description,priority,severity,technical_details,feature_details,suggested_actions,quality_score,quality_notes,quality_status,revision_count,created_at,updated_at
+TKT-20260325-040,96,Feature Request,0.99,[Feature Request] Add CSV import for bulk task creation,"Summary
+The user is requesting CSV import support to create many tasks at once during migration from another tool. This would significantly reduce manual setup time and improve onboarding for users with large existing task lists.
+
+User Need
+Users migrating to TaskPro from other tools may already have hundreds of tasks stored in CSV format and need an efficient way to bring that data into the app. Without CSV import, they must recreate tasks manually, creating major friction during onboarding and increasing the time required to adopt TaskPro.
+
+Proposed Solution
+Add CSV import for bulk task creation, with a defined import schema for common task fields and a guided import flow that helps users map columns and identify validation errors before completion. Consider supporting core fields first, such as task title, description, due date, priority, and status, then expand based on usage and migration needs.
+
+Impact Assessment
+This request appears to have high impact because it directly affects migration effort, onboarding speed, and willingness to adopt TaskPro for users with large existing task lists. Demand signal is strong based on the explicit request, the scale of data involved, and the clear time savings described by the user.",High,,,"{""feature_name"":""CSV Task Import"",""description"":""The user wants the ability to import tasks from CSV files to create many tasks at once. This would significantly reduce manual effort during migration from another tool and make onboarding easier for users with large existing task lists."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""Current workaround is manual task entry; no other alternative was mentioned."",""source"":""support_email / E015""}","[""Validate demand by checking for similar migration and bulk import requests"",""Define CSV schema and import flow for task fields and error handling"",""Assess implementation scope for mobile and backend support for bulk task creation""]",8.0,"Well-structured feature ticket with a clear title, strong articulation of the user need, and a plausible proposed solution grounded in the original feedback. Priority may be slightly overstated relative to the single low-priority request, and the ticket would be stronger with clearer evidence of breadth of demand or product rationale for assigning High priority.",approved,0,2026-03-25 05:41:16,2026-03-25 05:41:21
+TKT-20260325-039,95,Bug,0.98,[Bug] Deadline notifications delayed by 2-3 hours,"Summary
+Users report that TaskPro deadline notifications on Android are consistently delivered 2–3 hours after the configured reminder time, despite notifications being enabled and battery optimization being disabled. This delay has caused missed important deadlines.
+
+Steps to Reproduce
+1. Install and open TaskPro version 3.2.1 on a OnePlus 12 running Android 14.
+2. Enable deadline notifications in the app and ensure system notifications are allowed.
+3. Confirm battery optimization is disabled for TaskPro.
+4. Create or edit a task with a deadline reminder set for a specific time.
+5. Wait until the scheduled reminder time passes.
+6. Observe that the notification arrives 2–3 hours after the configured deadline/reminder time.
+
+Expected Behavior
+Deadline notifications should arrive at the scheduled reminder or deadline time.
+
+Actual Behavior
+Deadline notifications consistently arrive 2–3 hours late, causing users to miss deadlines.
+
+Environment
+- Device: OnePlus 12
+- OS: Android 14
+- App Version: 3.2.1
+- Source: support_email / E014",High,Major,"{""affected_component"":""Notifications"",""platform_details"":{""device"":""OnePlus 12"",""os"":""Android 14"",""app_version"":""3.2.1""},""reported_pattern"":""Consistent 2-3 hour delay in deadline notification delivery"",""user_validations"":[""System notifications enabled"",""Battery optimization disabled""],""suspected_areas"":[""Notification scheduling"",""Time handling/timezone logic"",""Alarm/worker execution on Android 14"",""OEM background restrictions on OnePlus devices""]}",,"[""Investigate notification scheduling and time handling on Android 14, especially for OnePlus devices."",""Review alarm/worker execution logic for timezone, Doze, and OEM background restrictions despite battery optimization being disabled."",""Attempt reproduction on a OnePlus 12 with app version 3.2.1 and collect notification delivery logs.""]",9.0,"Strong bug ticket with a clear, correctly prefixed title, solid environment details, and actionable reproduction steps that align well with the original feedback. Minor gap: the repro steps infer task creation and waiting behavior not explicitly stated by the user, so adding any exact reminder configuration or frequency data from logs would make it even stronger.",approved,0,2026-03-25 05:40:54,2026-03-25 05:40:59
+TKT-20260325-038,94,Complaint,0.97,[Complaint] Mobile app lacks parity and feels subpar vs web,"Summary
+The user reports strong dissatisfaction with the mobile app compared with the web experience, citing missing features, a cluttered interface, and poor perceived product quality. They also highlight that the current subscription price creates an expectation of better platform parity.
+
+Issue Description
+- The mobile app is described as significantly worse than the web version.
+- Key features appear to be missing on mobile.
+- The mobile UI is perceived as cluttered.
+- The user feels the mobile experience was treated as an afterthought.
+- The complaint is amplified by the $9.99/month subscription cost and expectation of consistency across platforms.
+
+User Impact
+- Reduced satisfaction and trust in the product’s cross-platform experience.
+- Users may avoid or abandon the mobile app due to perceived lower usability and incomplete functionality.
+- Subscription value perception is negatively affected, increasing churn risk.
+
+Suggested Resolution
+- Review feature parity gaps between web and mobile and prioritize the most visible missing capabilities.
+- Conduct a UX assessment of the mobile interface to identify clutter and simplify core workflows.
+- Align mobile roadmap and messaging with user expectations for paid subscriptions.
+- Consider communicating planned parity improvements to affected users.",Medium,,,,"[""Audit web vs mobile feature parity gaps"",""Review mobile UX for clutter and workflow friction"",""Assess churn/value perception risk for paid mobile users"",""Communicate roadmap or parity improvements to users""]",8.0,"Strong ticket that accurately reflects the original complaint and clearly captures the user impact and likely follow-up areas. To improve further, it should identify specific missing mobile features or workflows and clarify whether Medium priority is based on broader trend data versus this single low-priority complaint.",approved,0,2026-03-25 05:40:34,2026-03-25 05:40:38
+TKT-20260325-037,93,Feature Request,0.98,[Feature Request] Add manager dashboard for team-wide progress,"Summary
+The user is requesting a manager dashboard that provides a centralized view of all team members’ task progress. Their team of 15 currently has to open each individual board separately, creating unnecessary overhead for managers.
+
+User Need
+Managers overseeing multiple team members need a single place to monitor task progress across the team at a glance. The current workflow of checking each person’s board individually is time-consuming and does not scale well for larger teams.
+
+Proposed Solution
+Add a manager progress dashboard that summarizes task status and progress across all team members in one view. The dashboard should support high-level progress summaries, filters, and drill-down into individual team members’ work so managers can quickly identify status and follow up where needed.
+
+Impact Assessment
+This request appears to have high impact because it addresses a clear efficiency pain point for team management and is coming from a team using TaskPro across 15 users. Demand signal is strong based on the explicit request, the team-management context, and the significant time cost of the current workaround.",High,,,"{""feature_name"":""Manager Progress Dashboard"",""description"":""The user wants a centralized dashboard that lets managers view all team members' task progress in one place. This would remove the need to open each individual board separately and save significant time for teams managing multiple users."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""Current workaround is checking each person's board individually."",""source"":""support_email / E012"",""team_size"":15}","[""Validate demand with other team and manager-related feedback for dashboard visibility needs"",""Define dashboard requirements such as progress summaries, filters, and team member drill-down"",""Assess feasibility for a team-wide overview in the mobile app and estimate implementation effort""]",9.0,"Strong feature ticket with a clear, correctly prefixed title, solid user context, and a well-articulated need and proposed solution aligned to the original feedback. Priority is slightly overstated versus the source's medium hint, but the impact rationale is reasonable and the ticket is actionable for backlog intake.",approved,0,2026-03-25 05:40:18,2026-03-25 05:40:22
+TKT-20260325-036,92,Bug,0.99,[Bug] App freezes creating task with due date on Android 14,"Summary
+The app becomes unresponsive for 15–20 seconds whenever the user creates a new task with a due date. The issue occurs consistently on a Google Pixel 7a running Android 14 in TaskPro version 3.2.0 and requires force closing the app.
+
+Steps to Reproduce
+1. Open TaskPro on a Google Pixel 7a running Android 14.
+2. Start creating a new task.
+3. Add or select a due date for the task.
+4. Attempt to save or continue creating the task.
+5. Observe the app freezing for 15–20 seconds and requiring a force close.
+
+Expected Behavior
+Creating a new task with a due date should complete smoothly without freezing, and the app should remain responsive.
+
+Actual Behavior
+The app consistently freezes for about 15–20 seconds when creating a new task with a due date, and the user must force close and reopen the app.
+
+Environment
+- Device: Google Pixel 7a
+- OS: Android 14
+- App Version: 3.2.0
+- Source: support_email / E011",High,Major,"{""affected_component"":""Tasks"",""platform_details"":{""device"":""Google Pixel 7a"",""os"":""Android 14"",""app_version"":""3.2.0""}}",,"[""Reproduce the issue on a Google Pixel 7a with Android 14 using app version 3.2.0."",""Investigate task creation and due date picker logic for UI thread blocking or performance regressions."",""Review crash, ANR, and performance logs around task save flow to identify the freeze source.""]",9.0,"Strong bug ticket: the title is clear and correctly prefixed, and the description includes expected/actual behavior, repro steps, and environment that align closely with the original feedback. Priority is reasonable for a consistent app-freeze issue, though the added repro detail goes slightly beyond the raw report and could be validated during triage.",approved,0,2026-03-25 05:39:57,2026-03-25 05:40:02
+TKT-20260325-035,91,Spam,0.99,[Spam] Partnership solicitation promotional outreach,"Summary
+This submission is unsolicited partnership and promotional outreach rather than genuine user feedback about TaskPro.
+
+Reason for Classification
+- The message promotes an external business opportunity and directs recipients to an external website.
+- It does not describe any product issue, feature request, user experience, or app-related concern.
+- The content is irrelevant to TaskPro product quality and support workflows.",Low,,,,"[""Mark as spam and exclude from product triage"",""Do not route to engineering or product teams"",""Block or filter similar partnership solicitation emails if repeated""]",9.0,"Well-formed spam ticket: the title is clear, the description accurately explains why the message is non-product-related, and the low priority is appropriate. Minor improvement would be to include the original sender/subject in the description for easier auditability, but this is ready for the backlog workflow.",approved,0,2026-03-25 05:39:39,2026-03-25 05:39:43
+TKT-20260325-034,90,Bug,0.98,[Bug] Tasks not syncing between iPhone app and web app,"Summary
+User reports that tasks created on an iPhone 15 running TaskPro 3.2.1 do not appear in the web app on Chrome/Windows 11, and tasks created in the web app do not appear on the phone. Sync reportedly worked until about a week ago, and logging out and back in on both devices did not resolve the issue.
+
+Steps to Reproduce
+1. Log in to TaskPro on an iPhone 15 running iOS 17.2 with app version 3.2.1.
+2. Create a new task on the phone.
+3. Log in to the TaskPro web app on a Windows 11 laptop using Chrome.
+4. Check whether the newly created task appears on the web app.
+5. Create a different task in the web app on the laptop.
+6. Return to the phone app and check whether the web-created task appears there.
+
+Expected Behavior
+Tasks created on one device should sync and appear on the other device across mobile and web.
+
+Actual Behavior
+Tasks created on the iPhone do not appear on the laptop web app, and tasks created on the laptop do not appear on the iPhone.
+
+Environment
+- Mobile device: iPhone 15
+- Mobile OS: iOS 17.2
+- Mobile app version: 3.2.1
+- Web environment: Chrome on Windows 11
+- Troubleshooting already attempted: Logged out and back in on both devices
+- Timing: Issue began approximately one week ago after previously working correctly",High,Major,"{""affected_component"":""Sync"",""platform_details"":{""device"":""iPhone 15 and laptop"",""os"":""iOS 17.2 and Windows 11"",""app_version"":""3.2.1 on phone, web app on Chrome""}}",,"[""Investigate sync service/backend changes from the past week for regressions affecting cross-platform task updates."",""Review client and server sync logs for iOS app version 3.2.1 and web sessions in Chrome on Windows 11."",""Attempt to reproduce using iPhone iOS 17.2 and web app on Chrome to confirm whether re-authentication or account state affects sync.""]",10.0,"Strong bug ticket that closely matches the original feedback and adds clear reproduction steps, expected vs. actual behavior, environment details, and reasonable technical next steps. Priority is appropriate for a cross-platform sync regression affecting core functionality, so this is ready for the backlog.",approved,0,2026-03-25 05:39:27,2026-03-25 05:39:31
+TKT-20260325-033,89,Feature Request,0.99,[Feature Request] Provide API access for task data integrations,"Summary
+The user is requesting API access so their company can integrate TaskPro task data with internal reporting tools. This request comes from an organization using TaskPro across 50+ employees and includes explicit willingness to upgrade to a higher plan for this capability.
+
+User Need
+Business and enterprise customers need a reliable way to access task data programmatically so they can connect TaskPro with internal reporting and analytics workflows. Without API access, teams must rely on manual processes or cannot incorporate TaskPro data into existing internal systems.
+
+Proposed Solution
+Provide API access for task data, starting with a scoped roadmap for read access to tasks and reporting-related data. Consider packaging API functionality within higher-tier or enterprise plans, and define roadmap communications for customers asking about API availability and timeline.
+
+Impact Assessment
+This feature appears to have high impact because it supports enterprise integration workflows, improves TaskPro's suitability for larger organizations, and may create upsell opportunities for higher-priced plans. Demand signal is strong based on the customer size, clear integration use case, and stated willingness to pay more for the feature.",High,,,"{""feature_name"":""Task Data API Access"",""description"":""The user wants TaskPro to provide API access so their company can integrate task data with internal reporting tools. This would support enterprise reporting workflows for a team of 50+ employees, and they indicate willingness to upgrade plans for this capability."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""No specific workaround mentioned; currently they appear unable to integrate task data with internal reporting tools."",""source"":""support_email / E008""}","[""Validate demand for public API access across other business and enterprise accounts"",""Define API roadmap scope starting with read access to task and reporting data"",""Assess packaging this feature under higher-tier plans or enterprise pricing""]",9.0,"Strong feature ticket with a clear, correctly prefixed title and a well-structured description that captures the user need, business context, proposed direction, and impact. Priority is slightly overstated versus the original medium priority hint, but the enterprise use case and revenue potential make it still reasonable; only minor improvement would be to separate confirmed user feedback from inferred roadmap recommendations.",approved,0,2026-03-25 05:39:05,2026-03-25 05:39:09
+TKT-20260325-032,88,Complaint,0.98,[Complaint] Duplicate monthly subscription charge request,"Summary
+Customer reports being charged twice for the same monthly subscription on March 1st and requests an immediate refund for the duplicate charge.
+
+Issue Description
+The user states that two separate transactions were processed for the monthly subscription: TXN-9876 and TXN-9877, both for $9.99 on March 1st. The customer notes they have been subscribed for 2 years and describes the experience as disappointing.
+
+User Impact
+The customer incurred an unexpected duplicate billing charge totaling an extra $9.99 and is expressing frustration, which may affect retention and trust.
+
+Suggested Resolution
+Review the billing records for the listed transactions, confirm whether a duplicate charge occurred, issue a refund for the duplicate transaction if validated, and communicate the resolution promptly to the customer.",High,,,,"[""Verify both transaction IDs in billing system"",""Confirm whether duplicate subscription charge was processed"",""Issue refund for duplicate $9.99 charge if confirmed"",""Notify customer of refund status and expected timeline"",""Review account for any recurring billing anomalies""]",9.0,"Ticket closely matches the original feedback and is clear, specific, and actionable. Minor gap: it lacks explicit account/environment identifiers beyond transaction IDs, but it contains enough billing context for support or engineering to begin investigation immediately.",approved,0,2026-03-25 05:38:44,2026-03-25 05:38:48
+TKT-20260325-031,87,Praise,0.99,[Praise] Positive feedback for support agent Maria,"Summary
+The user expressed appreciation for support agent Maria after she helped resolve a sync issue the previous week. The feedback highlights the quality of TaskPro's support experience and praises the broader team.
+
+Key Positive Points
+- Maria was described as incredibly patient.
+- Maria was described as knowledgeable.
+- The user thanked the team for successfully helping resolve the issue.
+- The user stated that TaskPro has a great team.
+
+Areas Highlighted
+- Support agent professionalism
+- Helpfulness during issue resolution
+- Positive customer service experience
+- Team reputation and trust",Low,,,,"[""Share positive feedback with Maria and the support team"",""Log as customer praise for support quality tracking""]",9.0,"Strong ticket for a praise item: the title is clear, the description accurately captures the original feedback, and the low priority fits the non-actionable nature of the submission. Minor deduction only because it is not directly engineer-actionable in the usual backlog sense, though the suggested follow-up actions are appropriate.",approved,0,2026-03-25 05:38:30,2026-03-25 05:38:34
+TKT-20260325-030,86,Bug,0.99,[Bug] All projects and tasks missing after opening app in Chrome,"Summary
+User reports that after opening TaskPro in Chrome on a MacBook Pro M3, all projects and tasks appear to be missing from the account. This is a critical potential data-loss or sync/display failure affecting an enterprise-plan customer with over 50 active projects and hundreds of tasks.
+
+Steps to Reproduce
+1. Log in to the affected TaskPro account on a MacBook Pro M3 using Chrome browser.
+2. Open the app dashboard or projects view.
+3. Observe the projects and tasks list immediately after app load.
+
+Expected Behavior
+All previously created projects and their associated tasks should remain visible and accessible after opening the app.
+
+Actual Behavior
+All projects appear to be missing, including over 50 active projects and hundreds of tasks, indicating possible data loss or a severe sync/display failure.
+
+Environment
+- Source: support_email / E005
+- Plan: Enterprise
+- Device: MacBook Pro M3
+- Browser: Chrome
+- OS: Unknown
+- App Version: Unknown
+- Affected Component: Projects/Tasks",Critical,Critical,"{""affected_component"":""Projects/Tasks"",""platform_details"":{""device"":""MacBook Pro M3"",""os"":""Unknown"",""app_version"":""Unknown"",""browser"":""Chrome""},""plan"":""Enterprise"",""impact"":{""missing_projects"":""50+ active projects"",""missing_tasks"":""Hundreds of tasks""}}",,"[""Immediately investigate backend data integrity, account-level project and task records, and any recent sync or deletion events for the affected enterprise account."",""Check for web app regressions specific to Chrome on MacBook Pro M3 and determine whether this is a display/sync issue versus permanent data loss."",""Preserve relevant logs, contact the customer promptly, and attempt account data restoration from backups if records were deleted or corrupted.""]",8.0,"Strong ticket with a clear bug title, good impact summary, and sufficient environment/context to begin investigation. To improve further, clarify that repro is based on a single user report rather than confirmed internal reproduction, and avoid assuming data loss versus a visibility/sync issue without additional evidence.",approved,0,2026-03-25 05:38:16,2026-03-25 05:38:20
+TKT-20260325-029,85,Feature Request,0.99,[Feature Request] Add task dependencies for project workflows,"Summary
+The user is requesting task dependency support so one task can be blocked until another is completed. This would improve TaskPro for project management workflows that require tasks to be completed in sequence.
+
+User Need
+Users managing multi-step projects need a way to define dependencies between tasks, such as preventing Task B from starting until Task A is complete. Without this capability, users must track sequencing manually, which makes project coordination harder and increases the risk of work starting out of order.
+
+Proposed Solution
+Add task dependency management that allows users to link tasks with prerequisite relationships. An initial implementation could support basic finish-to-start dependencies, visually indicate blocked tasks, and prevent dependent tasks from being marked as in progress until prerequisite tasks are completed.
+
+Impact Assessment
+This request has high user impact because it supports a more advanced project management use case and helps users organize task sequences with less manual oversight. Demand signal appears strong from the explicit workflow example provided, and the feature could expand TaskPro’s usefulness for teams and individuals managing structured projects.",High,,,"{""feature_name"":""Task Dependency Management"",""description"":""The user wants the ability to create dependencies between tasks so one task cannot start until another is completed. This would improve project management workflows by helping users organize task sequences and enforce execution order."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""No workaround mentioned."",""source"":""support_email / E004""}","[""Validate demand by reviewing similar project-management feature requests and customer segments"",""Define dependency types and UX flows, such as blocking tasks until prerequisite completion"",""Assess implementation scope across task model, scheduling logic, and mobile UI""]",8.0,"Strong feature ticket with a clear title, solid user need, and a plausible proposed solution that aligns well with the original feedback. Priority appears somewhat overstated versus the source feedback’s low priority hint and single-user signal, but the ticket is otherwise actionable and backlog-ready.",approved,0,2026-03-25 05:37:56,2026-03-25 05:38:00
+TKT-20260325-028,84,Bug,0.98,[Bug] Login fails with 'Authentication failed' after update 3.2.1,"Summary
+User reports being unable to log into TaskPro after updating to version 3.2.1. The app shows an 'Authentication failed' error even when correct credentials are entered, indicating a likely regression in the login flow.
+
+Steps to Reproduce
+1. Open TaskPro on a Samsung Galaxy S24 Ultra running Android 14.
+2. Ensure the app is updated to version 3.2.1.
+3. Navigate to the login screen.
+4. Enter valid account credentials.
+5. Tap the login button.
+6. Observe the authentication result on either WiFi or mobile data.
+
+Expected Behavior
+User should be able to log into the account successfully when entering correct credentials.
+
+Actual Behavior
+The app displays an 'Authentication failed' error and prevents login even when correct credentials are entered.
+
+Environment
+- Device: Samsung Galaxy S24 Ultra
+- OS: Android 14
+- App Version: 3.2.1
+- Network Conditions: WiFi and mobile data
+- Affected Component: Login
+- Source: support_email / E003",High,Major,"{""affected_component"":""Login"",""platform"":""Android"",""platform_details"":{""device"":""Samsung Galaxy S24 Ultra"",""os"":""Android 14"",""app_version"":""3.2.1""},""error_message"":""Authentication failed"",""regression_since"":""3.2.1 update"",""network_conditions"":[""WiFi"",""mobile data""]}",,"[""Reproduce the issue on Android 14 with app version 3.2.1 using valid test accounts."",""Review recent authentication and login-related changes introduced in version 3.2.1."",""Check backend auth logs and client error handling to identify whether the failure is app-side or server-side.""]",10.0,"Ticket accurately reflects the original feedback with a clear bug title, solid reproduction steps, environment details, and reasonable technical framing for a likely regression after 3.2.1. Priority is appropriate for a login-blocking issue, and the ticket is actionable for engineering without further clarification.",approved,0,2026-03-25 05:37:37,2026-03-25 05:37:41
+TKT-20260325-027,83,Feature Request,0.99,[Feature Request] Add dark mode theme for reduced eye strain,"Summary
+The user is requesting a dark mode theme for TaskPro to reduce eye strain during late-night use. They note that the current bright white interface is uncomfortable and that competing apps already offer this capability.
+
+User Need
+Users who work in low-light or nighttime settings need a darker interface option that is more comfortable to view for extended periods. This request reflects both a usability need and a competitive expectation, since similar apps already provide dark mode.
+
+Proposed Solution
+Add a dark mode theme option for the app interface, ideally with support for both a manual toggle and optional system theme matching. Review the existing theme architecture, validate accessible dark color palettes across key screens, and consolidate similar dark mode requests to assess overall demand.
+
+Impact Assessment
+This feature appears to have high user impact because it addresses eye strain, improves comfort for nighttime usage, and helps TaskPro meet common market expectations. Demand signal is strong based on the explicit request and competitor comparison, making this a strong candidate for roadmap prioritization.",High,,,"{""feature_name"":""Dark Mode Theme"",""description"":""The user wants a dark mode option for the app interface to reduce eye strain during late-night use. They note that the current bright white UI is uncomfortable and that competing apps already provide this feature, suggesting it is an expected usability enhancement."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""No in-app workaround mentioned; user compares TaskPro to competing apps that already offer dark mode."",""source"":""support_email / E002""}","[""Review existing theme architecture to assess effort for implementing a dark mode option"",""Search and link any existing dark mode feature requests to consolidate demand"",""Design and validate dark color palettes for key screens and accessibility compliance""]",8.0,"Well-structured feature ticket with a clear title, strong user-need summary, and actionable proposed solution aligned to the original feedback. Priority appears slightly overstated versus the source’s medium hint, but overall the ticket is complete and ready for backlog review.",approved,0,2026-03-25 05:37:17,2026-03-25 05:37:21
+TKT-20260325-026,82,Bug,0.99,[Bug] App crashes on launch on iPad Air 5th gen,"Summary
+The user reports that TaskPro crashes immediately on launch on an iPad Air (5th gen) running iPadOS 17.3. Reinstalling app version 3.2.1 does not resolve the issue, and the app is unusable for a work-dependent user.
+
+Steps to Reproduce
+1. Install or update TaskPro to version 3.2.1 on an iPad Air (5th gen) running iPadOS 17.3.
+2. Tap the TaskPro app icon to launch the app.
+3. Observe that the app crashes immediately on startup.
+4. Reinstall the app and launch it again.
+5. Observe that the crash still occurs.
+
+Expected Behavior
+The app should open normally and allow the user to access TaskPro features.
+
+Actual Behavior
+The app crashes immediately on launch, preventing any use of the app even after reinstalling.
+
+Environment
+- Device: iPad Air (5th gen)
+- OS: iPadOS 17.3
+- App Version: 3.2.1
+- Source: support_email / E001",Critical,Critical,"{""affected_component"":""Performance"",""platform_details"":{""device"":""iPad Air (5th gen)"",""os"":""iPadOS 17.3"",""app_version"":""3.2.1""}}",,"[""Attempt to reproduce the launch crash on an iPad Air (5th gen) with iPadOS 17.3 using app version 3.2.1."",""Review crash logs and startup telemetry for version 3.2.1 to identify the launch failure root cause."",""Escalate to the iOS engineering team and prepare a hotfix if the issue is confirmed.""]",9.0,"Strong bug ticket with a clear, correctly prefixed title and a complete description including repro steps, expected/actual behavior, environment, and impact that aligns well with the original feedback. Priority is slightly overstated versus the source feedback and the affected component may be too generic, but the ticket is accurate and actionable overall.",approved,0,2026-03-25 05:36:57,2026-03-25 05:37:01
+TKT-20260325-025,81,Bug,0.98,[Bug] Search returns no results for existing tasks,"Summary
+The user reports that TaskPro's search function does not return results for task names that are known to exist. The issue was observed on a Pixel 8 running Android 14 with app version 3.2.1.
+
+Steps to Reproduce
+1. Open TaskPro on a Pixel 8 running Android 14.
+2. Navigate to the task list containing existing tasks.
+3. Tap the search function.
+4. Enter the name of an existing task.
+5. Observe the search results.
+
+Expected Behavior
+Searching for an existing task name should return matching tasks in the results.
+
+Actual Behavior
+Search returns no results even when matching tasks already exist.
+
+Environment
+- Device: Pixel 8
+- OS: Android 14
+- App Version: 3.2.1
+- Source: Google Play / app_store_review (R025)
+- User Rating: 2/5",High,Major,"{""affected_component"":""Search"",""platform_details"":{""device"":""Pixel 8"",""os"":""Android 14"",""app_version"":""3.2.1""}}",,"[""Reproduce the issue on Pixel 8 with Android 14 using app version 3.2.1 and verify whether task indexing or query matching is failing."",""Review recent changes to search logic, filters, and task data synchronization that could cause existing tasks to be omitted from results."",""Add diagnostic logging and test coverage for task-name search on Android devices, especially Android 14.""]",10.0,"Well-written bug ticket that accurately reflects the original feedback and includes clear reproduction steps, expected vs. actual behavior, and environment details. Priority and technical framing are appropriate, so the ticket is ready for backlog intake.",approved,0,2026-03-25 05:35:49,2026-03-25 05:35:53
+TKT-20260325-024,80,Feature Request,0.99,[Feature Request] Add built-in Pomodoro timer to task view,"Summary
+The user is requesting a built-in Pomodoro timer within the task view to support focused work sessions without leaving TaskPro. This would make it easier to use time-boxed productivity techniques directly alongside task execution.
+
+User Need
+The user wants an integrated focus timer so they can stay in the task view while working through Pomodoro-style sessions. No workaround was mentioned, suggesting a gap in support for users who rely on structured focus intervals.
+
+Proposed Solution
+Add a Pomodoro timer directly to the task view, with an MVP focused on core timer controls such as start, pause, reset, and configurable work/break intervals. The implementation should consider in-app visibility, notifications for session transitions, and whether session progress should be associated with the active task.
+
+Impact Assessment
+This request appears to have medium user impact with a strong demand signal based on the feedback provided. A built-in Pomodoro timer could improve TaskPro’s usefulness for focus-oriented workflows and reduce the need for users to switch to separate timer apps during work sessions.",Medium,,,"{""feature_name"":""Built-in Pomodoro Timer"",""description"":""The user wants a Pomodoro timer integrated directly into the task view to support focused work sessions without leaving the app. This would improve concentration workflows and make TaskPro more useful for time-boxed productivity techniques."",""user_impact"":""Medium"",""demand_signal"":""Strong"",""existing_alternatives"":""No workaround mentioned."",""platform"":""App Store"",""source"":""app_store_review""}","[""Validate demand by checking for similar timer or focus-mode feature requests"",""Explore UX concepts for embedding a Pomodoro timer within the task view"",""Assess implementation scope for timer controls, notifications, and session tracking""]",8.0,"Strong feature ticket with a clear, correctly prefixed title and a well-structured description covering user need, proposed solution, and impact. Minor deduction because some proposed details (configurable intervals, notifications, task association) go beyond the original feedback and should be framed more explicitly as assumptions or follow-up discovery points.",approved,0,2026-03-25 05:35:31,2026-03-25 05:35:35
+TKT-20260325-023,79,Spam,0.99,[Spam] Nonsensical gibberish app store review,"Summary
+The submitted feedback contains random, nonsensical text and does not describe any identifiable issue, request, or experience related to TaskPro.
+
+Reason for Classification
+The content appears to be gibberish/spam (""asdkjfh aksdjfh random text 12345 test test test"") and provides no actionable information for product, support, or engineering teams.",Low,,,,"[""Mark as spam and exclude from product analysis"",""No follow-up required unless repeated from same source""]",10.0,"The ticket accurately reflects the original feedback as spam, with a clear title, sufficient rationale, and an appropriate low priority. It is technically consistent and fully actionable for triage, since the recommended next steps are explicit.",approved,0,2026-03-25 05:35:09,2026-03-25 05:35:14
+TKT-20260325-022,78,Bug,0.95,[Bug] Excessive battery drain from background processes,"Summary
+User reports that TaskPro consumes approximately 30% of device battery per day. The issue appears related to excessive background activity in iOS app version 3.2.1.
+
+Steps to Reproduce
+1. Install and open TaskPro version 3.2.1 from the App Store.
+2. Use the app normally and leave it running or enabled in the background during the day.
+3. Monitor device battery usage in system battery settings.
+4. Observe TaskPro consuming a disproportionately high amount of battery, reportedly around 30% daily.
+
+Expected Behavior
+TaskPro should use battery efficiently, with minimal background activity and reasonable daily battery consumption.
+
+Actual Behavior
+TaskPro reportedly consumes about 30% of the device battery per day, suggesting excessive background processing.
+
+Environment
+- Platform: iOS (App Store)
+- App Version: 3.2.1
+- Device: Unknown
+- OS: Unknown
+- Source: app_store_review / R022",High,Major,"{""affected_component"":""Performance"",""platform"":""iOS"",""platform_details"":{""device"":""Unknown"",""os"":""Unknown"",""app_version"":""3.2.1""}}",,"[""Investigate background tasks, sync jobs, and notification-related processes for excessive wakeups or long-running activity."",""Profile battery usage on iOS devices running app version 3.2.1 to identify high-consumption code paths."",""Add logging or diagnostics for background execution and compare against expected battery usage baselines.""]",8.0,"Strong bug ticket with a clear title, solid structure, and reasonable technical framing that aligns well with the original feedback. To make it fully engineer-ready, add device model, iOS version, and any reproducibility details or battery diagnostics to better validate severity and narrow investigation scope.",approved,0,2026-03-25 05:34:55,2026-03-25 05:34:59
+TKT-20260325-021,77,Praise,0.99,[Praise] User prefers TaskPro subtask feature over Todoist,"Summary
+User shared highly positive feedback after switching from Todoist, stating they have no regrets and specifically praising TaskPro's subtask functionality.
+
+Key Positive Points
+- User switched from a competitor (Todoist) and reports stronger satisfaction with TaskPro.
+- Subtask feature is described as significantly better.
+- Overall sentiment is very positive and reinforced by a 5-star rating.
+
+Areas Highlighted
+- Subtask usability and feature quality
+- Competitive differentiation versus Todoist
+- Strong user retention/switching appeal
+
+Environment
+- Source: app_store_review / R021
+- Platform: Google Play
+- Rating: 5/5",Low,,,,"[""Share with product and marketing teams as competitive validation for subtasks"",""Tag as positive feedback related to subtask experience"",""Consider using anonymized insight in customer messaging or testimonials if policy allows""]",10.0,"Strong ticket for a praise item: the title is specific and correctly prefixed, and the description accurately captures the original feedback, context, platform, and rating. Priority is appropriate for positive feedback, and the suggested actions make the ticket immediately useful for product/marketing review.",approved,0,2026-03-25 05:34:36,2026-03-25 05:34:40
+TKT-20260325-020,76,Bug,0.99,[Bug] Data loss after updating to v3.2.1 from App Store,"Summary
+User reports that all previously saved project planning data was lost after updating TaskPro to version 3.2.1 from the App Store. This is a critical data-loss issue affecting user trust and continuity of work.
+
+Steps to Reproduce
+1. Open TaskPro on a device with existing project planning data saved.
+2. Update the app to version 3.2.1 from the App Store.
+3. Launch the app after the update.
+4. Check existing projects and planning data.
+
+Expected Behavior
+All existing project planning data should remain intact and accessible after updating the app.
+
+Actual Behavior
+After updating to version 3.2.1, all previously saved project planning data appears to be lost.
+
+Environment
+- Source: app_store_review / R020
+- Platform: App Store
+- App Version: 3.2.1
+- Device: Unknown
+- OS: Unknown
+- Affected Component: Sync",Critical,Critical,"{""affected_component"":""Sync"",""platform_details"":{""device"":""Unknown"",""os"":""Unknown"",""app_version"":""3.2.1""},""rating"":""1/5"",""source"":""app_store_review / R020""}",,"[""Investigate migration and sync logic introduced in version 3.2.1 for scenarios that could delete or detach user data after update."",""Attempt to reproduce on App Store builds using accounts with existing project data and verify whether local or cloud records are being overwritten."",""Check for recovery options and prepare a hotfix or rollback plan if the issue is confirmed.""]",8.0,"Strong bug ticket with a clear, correctly prefixed title, accurate critical priority, and a structured description covering expected/actual behavior. The main gap is limited environment and reproduction detail from the original feedback (device, OS, and whether data was truly deleted vs. temporarily inaccessible), but it is still actionable for engineering.",approved,0,2026-03-25 05:34:20,2026-03-25 05:34:25
+TKT-20260325-019,75,Feature Request,0.97,[Feature Request] Add Android home screen widget support,"Summary
+The user is requesting Android home screen widget support for TaskPro. This would allow quicker access to tasks or common actions without opening the app, improving convenience for day-to-day use.
+
+User Need
+The user wants faster access to TaskPro from the Android home screen, likely for viewing tasks at a glance or performing quick actions. No workaround was mentioned, indicating a gap in convenience and accessibility for Android users.
+
+Proposed Solution
+Add Android home screen widget support, with initial use cases such as a task list widget, quick-add widget, or a today view. An MVP should focus on the most broadly useful widget experiences and align with Android platform conventions.
+
+Impact Assessment
+This request appears to have medium user impact with a moderate demand signal. Supporting Android widgets could improve engagement and everyday usability for Google Play users by reducing friction in task access and capture.",Medium,,,"{""feature_name"":""Android Home Screen Widget"",""description"":""The user wants TaskPro to support Android home screen widgets. This would let them access tasks or app functionality more quickly without opening the app, improving convenience and day-to-day usability."",""user_impact"":""Medium"",""demand_signal"":""Moderate"",""existing_alternatives"":""No workaround mentioned."",""platform"":""Google Play"",""source"":""app_store_review""}","[""Review whether similar Android widget feature requests already exist and consolidate demand"",""Define the most useful widget use cases, such as task list, quick add, or today view"",""Assess Android engineering effort and create a scoped implementation proposal""]",8.0,"Strong feature ticket with a clear, correctly prefixed title and a well-structured description that captures the user need and possible solution directions. Priority seems reasonable, but the description slightly overstates demand and impact from a single brief review, so it should more clearly note that evidence is limited to one user request.",approved,0,2026-03-25 05:33:59,2026-03-25 05:34:04
+TKT-20260325-018,74,Complaint,0.99,[Complaint] Pricing perceived as too expensive vs competitors,"Summary:
+User reports that TaskPro's $9.99/month subscription feels too expensive compared to competing task manager apps.
+
+Issue Description:
+The feedback indicates dissatisfaction with current pricing and positions the subscription cost as a barrier to perceived value.
+
+User Impact:
+Price sensitivity may discourage conversion, increase churn risk, and negatively affect store perception among cost-conscious users comparing alternatives.
+
+Suggested Resolution:
+Review competitive pricing benchmarks, reassess value communication in App Store messaging, and consider testing alternative plans, discounts, or feature-tier packaging.
+
+Environment:
+Source: App Store review
+Platform: App Store
+Rating: 3/5
+Reference: R018",Medium,,,,"[""Benchmark TaskPro pricing against key competitors"",""Review subscription value messaging in App Store listing"",""Evaluate lower-cost tiers, annual discounts, or limited free plan adjustments""]",8.0,"Good ticket overall: the title is clear, the description accurately reflects the original feedback, and the suggested actions make it actionable for product/pricing review. To improve further, it could include stronger rationale for the Medium priority and explicitly note this is market/pricing feedback rather than a product defect.",approved,0,2026-03-25 05:33:39,2026-03-25 05:33:43
+TKT-20260325-017,73,Spam,0.99,[Spam] Promotional external website advertisement,"Summary: The submission is unsolicited promotional content advertising an external website and is unrelated to TaskPro or any app experience.
+
+Reason for Classification:
+- The content promotes external products/services (""Buy cheap supplements"")
+- It includes a suspicious external URL
+- It does not describe app usage, a bug, a feature request, or actionable product feedback
+- The message appears to be spam intended for advertising rather than support
+
+Suggested Resolution:
+- Exclude this feedback from product analysis and roadmap consideration
+- Mark the source entry as spam for moderation or filtering review
+- Consider strengthening review ingestion filters for promotional links and unrelated commercial language",Low,,,,"[""Exclude from analysis"",""Mark as spam in moderation workflow"",""Review spam filtering for promotional URLs""]",9.0,"Well-written spam classification ticket: the title is clear, the description accurately reflects the original feedback, and the suggested actions are actionable. Minor gap: priority is reasonable but could be clarified as operational/moderation-only since this is not a product backlog item.",approved,0,2026-03-25 05:33:24,2026-03-25 05:33:28
+TKT-20260325-016,72,Praise,0.99,[Praise] Premium analytics dashboard highly valued,"Summary
+User reports that upgrading to premium was worthwhile and specifically praises the analytics dashboard as incredibly useful.
+
+Key Positive Points
+- Premium upgrade is perceived as worth the cost
+- Analytics dashboard delivers clear user value
+- Overall sentiment is strongly positive, supported by a 5-star rating
+
+Areas Highlighted
+- Premium subscription experience
+- Analytics dashboard usefulness
+- Customer satisfaction with paid features
+
+Environment
+- Source: App Store review
+- Reference: R016
+- Platform: App Store
+- Rating: 5/5",Low,,,,"[""Share with product and marketing teams as positive validation of premium value proposition"",""Tag as positive feedback for analytics dashboard feature""]",9.0,"Well-formed praise ticket that accurately reflects the original App Store review with a clear title, solid summary, and appropriate low priority. Minor improvement: include app version 3.2.0 in the environment details for fuller traceability.",approved,0,2026-03-25 05:33:09,2026-03-25 05:33:14
+TKT-20260325-015,71,Bug,0.96,[Bug] Task reminders fail to fire reliably on Android,"Summary
+Users report that TaskPro notifications are unreliable on Android, with reminders failing to fire consistently. This causes missed deadlines and creates significant frustration for users who depend on timely alerts.
+
+Steps to Reproduce
+1. Create or edit a task with a reminder or deadline in the app.
+2. Ensure notifications/reminders are enabled for TaskPro.
+3. Wait until the scheduled reminder time passes.
+4. Observe whether the reminder notification appears consistently.
+
+Expected Behavior
+Task reminders should fire reliably at the scheduled time so users are alerted before deadlines.
+
+Actual Behavior
+Reminder notifications do not fire reliably, causing users to miss deadlines.
+
+Environment
+- Platform: Android / Google Play
+- App version: 3.2.0
+- Device: Unknown
+- OS version: Unknown
+- Affected component: Notifications",High,Major,"{""affected_component"":""Notifications"",""platform"":""Android"",""source"":""app_store_review / R015"",""app_version"":""3.2.0"",""device"":""Unknown"",""os_version"":""Unknown""}",,"[""Investigate notification scheduling and delivery logic on Android for app version 3.2.0"",""Review background execution, battery optimization, and notification permission handling that may block reminders"",""Attempt to reproduce on multiple Android devices using scheduled task reminders and collect notification logs""]",8.0,"Strong ticket overall: the title is clear, the bug is well scoped to Android reminders, and the description includes expected/actual behavior plus reasonable investigation directions. To improve further, avoid overstating reproducibility from a single review and note that device model, OS version, and exact repro conditions are still unknown.",approved,0,2026-03-25 05:32:56,2026-03-25 05:33:00
+TKT-20260325-014,70,Feature Request,0.98,[Feature Request] Add Siri Shortcuts for voice task creation,"Summary
+The user is requesting Siri Shortcuts support so they can create tasks in TaskPro using voice commands. This would improve speed and convenience for capturing tasks while hands-free or on the go.
+
+User Need
+The user needs a faster, more accessible way to add tasks without manually opening the app and typing. Voice-based task creation would help in situations where the user is driving, walking, or otherwise unable to interact directly with the app.
+
+Proposed Solution
+Add Siri Shortcuts support for task creation on iOS, potentially through Siri Shortcuts and App Intents integration. An MVP could focus on a simple flow that lets users invoke Siri to create a new task with spoken task content.
+
+Impact Assessment
+This request has medium user impact with a strong demand signal, and no workaround was mentioned in the feedback. Supporting Siri-based task capture could improve usability for iOS users and strengthen TaskPro’s value in quick-capture and accessibility-focused workflows.",Medium,,,"{""feature_name"":""Siri Shortcuts Support"",""description"":""The user wants TaskPro to support Siri Shortcuts so they can add tasks using voice commands. This would improve speed and convenience for task capture, especially when the user is hands-free or on the go."",""user_impact"":""Medium"",""demand_signal"":""Strong"",""existing_alternatives"":""No workaround mentioned."",""platform"":""App Store""}","[""Review iOS feasibility for Siri Shortcuts and App Intents integration for task creation"",""Check for similar feature requests and aggregate demand from iOS users"",""Define the MVP flow for creating a new task via Siri voice command""]",9.0,"Strong feature ticket: the title is clear and correctly prefixed, and the description captures the user need, proposed solution, platform context, and likely impact. Minor improvement would be to explicitly note iOS/App Store context in the title or summary and clarify whether this is limited to task creation MVP versus broader Siri actions.",approved,0,2026-03-25 05:32:36,2026-03-25 05:32:41
+TKT-20260325-013,69,Bug,0.99,[Bug] App crashes attaching images to tasks on Galaxy S23,"Summary
+User reports that TaskPro crashes every time they attempt to attach an image to a task on a Samsung Galaxy S23 running Android 14. The issue appears fully reproducible and blocks image attachment for task management on this device/environment.
+
+Steps to Reproduce
+1. Open TaskPro on a Samsung Galaxy S23 running Android 14.
+2. Open an existing task or create a new task.
+3. Choose the option to attach an image to the task.
+4. Select an image from the device gallery or file picker.
+5. Confirm the attachment.
+
+Expected Behavior
+The selected image should attach to the task successfully without interrupting app usage.
+
+Actual Behavior
+The app crashes every time the user attempts to attach an image to a task.
+
+Environment
+- Platform: Google Play
+- Source: app_store_review / R013
+- Device: Samsung Galaxy S23
+- OS: Android 14
+- App Version: 3.2.1
+- Affected Component: Tasks",High,Major,"{""affected_component"":""Tasks"",""platform"":""Android"",""platform_details"":{""device"":""Samsung Galaxy S23"",""os"":""Android 14"",""app_version"":""3.2.1""},""rating"":""1/5"",""source"":""app_store_review / R013""}",,"[""Reproduce the crash on Samsung Galaxy S23 with Android 14 using app version 3.2.1 and capture crash logs."",""Investigate the image attachment flow in Tasks, especially Android 14 media/file picker and permission handling."",""Add a fix and regression test for task image attachments, then verify on Samsung devices and Android 14.""]",10.0,"Strong bug ticket that closely matches the original feedback and adds clear reproduction steps, environment details, expected vs. actual behavior, and actionable next steps. Priority is appropriate for a reproducible crash that blocks a core workflow on a specific device/environment.",approved,0,2026-03-25 05:32:17,2026-03-25 05:32:21
+TKT-20260325-012,68,Feature Request,0.99,[Feature Request] Add support for recurring tasks,"Summary
+The user is requesting recurring task support so routine tasks do not need to be recreated manually each week. This would reduce repetitive effort for users who manage ongoing weekly responsibilities in TaskPro.
+
+User Need
+Users with repeated weekly work need a way to automatically recreate tasks on a schedule instead of manually entering the same items every Monday. The current workflow is tedious and increases avoidable friction for routine task management.
+
+Proposed Solution
+Add support for recurring tasks with scheduling options such as daily, weekly, and custom recurrence patterns. An initial implementation could focus on simple weekly recurrence for common use cases, then expand to broader scheduling controls and task template behavior.
+
+Impact Assessment
+This request has high user impact because it addresses repetitive manual work in a core task management workflow. Demand signal appears moderate from this review, and the feature would likely improve efficiency, retention, and satisfaction for users who rely on recurring routines.",High,,,"{""feature_name"":""Recurring Task Creation"",""description"":""The user wants the ability to create recurring tasks so they do not have to manually recreate the same tasks every Monday. This would reduce repetitive work and make routine task management more efficient."",""user_impact"":""High"",""demand_signal"":""Moderate"",""existing_alternatives"":""Manually recreating the same tasks every Monday."",""platform"":""App Store"",""source"":""app_store_review / R012"",""rating"":""3/5""}","[""Review whether similar recurring task requests already exist and consolidate demand."",""Define recurrence options such as daily, weekly, and custom schedules."",""Evaluate implementation requirements for task templates and repeat logic in the mobile app.""]",9.0,"Strong feature ticket with a clear, correctly prefixed title and a well-structured description covering user need, proposed solution, and impact. Priority is reasonable for a core workflow improvement, though actionability would improve further with clearer scope for the initial release and any platform constraints.",approved,0,2026-03-25 05:31:57,2026-03-25 05:32:01
+TKT-20260325-011,67,Praise,0.99,[Praise] Positive feedback on collaboration and shared boards,"Summary
+The user shared strong positive feedback about TaskPro’s collaboration capabilities, specifically highlighting shared boards and overall team satisfaction.
+
+Key Positive Points
+- Collaboration features are described as fantastic.
+- The user’s team loves the shared boards.
+- The feedback includes encouragement to continue current product direction.
+
+Areas Highlighted
+- Team collaboration experience
+- Shared boards functionality
+- Overall satisfaction with collaborative workflows
+
+Environment
+- Source: app_store_review / R011
+- Platform: Google Play
+- Rating: 5/5",Low,,,,"[""Share with product and collaboration feature teams"",""Include in customer sentiment reporting"",""Consider for marketing or testimonial review""]",9.0,"The ticket accurately reflects the original praise feedback with a clear title, complete summary, and appropriate low priority. It is well-structured and actionable for non-engineering follow-up, though app version could be included in the environment section for slightly better completeness.",approved,0,2026-03-25 05:31:37,2026-03-25 05:31:41
+TKT-20260325-010,66,Complaint,0.99,[Complaint] No response from support on billing issue,"Summary
+User reports severe dissatisfaction with customer service after contacting support three times about a billing issue without receiving a response. They are considering canceling, indicating elevated churn risk.
+
+Issue Description
+The user states that they emailed support three times regarding a billing-related problem and did not receive any reply.
+
+User Impact
+- Billing issue remains unresolved
+- Loss of trust in support responsiveness
+- User is considering canceling their subscription/account
+- Negative public app store review may affect brand perception
+
+Suggested Resolution
+- Review support inbox and ticket routing for missed billing inquiries
+- Identify and respond to the user's billing case as soon as possible
+- Assess support SLA adherence and escalation path for billing-related requests
+- Consider a service recovery follow-up to reduce churn risk
+
+Environment
+- Source: App Store review
+- Review ID: R010
+- Rating: 1/5
+- Platform: App Store",High,,,,"[""Review recent unresolved billing-related support contacts"",""Investigate whether inbound support emails are being missed or misrouted"",""Reach out to the customer with a billing resolution and apology"",""Audit response-time SLA performance for billing support""]",9.0,"Strong, actionable complaint ticket that accurately reflects the original feedback and captures key business impact, especially churn risk from an unresolved billing issue. Minor improvement: include the app version/date from the original review in the description for fuller context, but the ticket is ready for backlog review.",approved,0,2026-03-25 05:31:21,2026-03-25 05:31:27
+TKT-20260325-009,65,Feature Request,0.99,[Feature Request] Add Google Calendar deadline integration,"Summary
+The user is requesting a Google Calendar integration so TaskPro deadlines can sync automatically instead of being manually copied. This would reduce duplicate work and help users manage tasks and schedules in one place.
+
+User Need
+Users who rely on Google Calendar need an easier way to keep TaskPro deadlines aligned with their calendar workflow. The current manual copy process creates extra effort and increases the risk of missed or inconsistent deadlines.
+
+Proposed Solution
+Add an integration that allows TaskPro task deadlines to sync to Google Calendar. An MVP could focus on one-way syncing of task deadlines into a connected Google Calendar, with future evaluation for two-way sync, calendar selection, and update handling.
+
+Impact Assessment
+This request appears to have high user impact because it removes repetitive manual work and fits a common planning workflow for mobile users. Demand signal is strong based on the explicit request and clear workflow pain point, making this a strong candidate for roadmap review.",High,,,"{""feature_name"":""Google Calendar Integration"",""description"":""The user wants TaskPro to integrate with Google Calendar so deadlines can sync automatically instead of being copied manually. This would reduce duplicate work and help users manage tasks and schedules in one place."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""Manually copying deadlines into Google Calendar."",""platform"":""Google Play"",""source"":""app_store_review / R009"",""rating"":""4/5""}","[""Check for existing feature requests or roadmap items related to calendar integrations"",""Validate demand for Google Calendar sync across Android users and task planning workflows"",""Define MVP scope for syncing TaskPro deadlines to Google Calendar""]",9.0,"Strong feature ticket: the title is clear, the description captures the user need and proposes a sensible MVP, and the technical framing is consistent with the original feedback. Priority seems reasonable, though it would be even stronger with evidence of broader demand or any constraints around sync scope and supported platforms.",approved,0,2026-03-25 05:31:06,2026-03-25 05:31:10
+TKT-20260325-008,64,Bug,0.97,[Bug] Dashboard load time exceeds 10 seconds on iPhone 14 Pro,"Summary
+A user reports a significant performance regression since the latest update, with the Dashboard taking more than 10 seconds to load. The issue appears on TaskPro v3.2.1 on an iPhone 14 Pro running iOS 17.3 and negatively affects app responsiveness.
+
+Steps to Reproduce
+1. Open TaskPro on an iPhone 14 Pro running iOS 17.3.
+2. Launch or update the app to version 3.2.1.
+3. Navigate to the Dashboard after opening the app.
+4. Observe the time taken for the Dashboard to finish loading.
+
+Expected Behavior
+The Dashboard should load quickly after app launch within a normal responsive timeframe.
+
+Actual Behavior
+The Dashboard takes more than 10 seconds to load after the latest update, making the app feel very slow.
+
+Environment
+- Platform: App Store
+- Source: app_store_review / R008
+- Device: iPhone 14 Pro
+- OS: iOS 17.3
+- App Version: 3.2.1
+- Affected Component: Performance",High,Major,"{""affected_component"":""Performance"",""platform_details"":{""device"":""iPhone 14 Pro"",""os"":""iOS 17.3"",""app_version"":""3.2.1""},""rating"":""2/5"",""regression_since"":""last update""}",,"[""Investigate performance regressions introduced in app version 3.2.1 affecting Dashboard load time."",""Profile Dashboard startup and network/data-loading paths on iPhone 14 Pro with iOS 17.3."",""Add or review performance monitoring metrics to compare pre-update and post-update Dashboard load times.""]",9.0,"Strong bug ticket: the title is specific and correctly prefixed, and the description closely matches the original feedback with clear repro steps, expected/actual behavior, and environment details. Priority appears appropriate for a significant regression, though the ticket could be slightly stronger with broader impact data or confirmation of reproducibility beyond the single reported device.",approved,0,2026-03-25 05:30:46,2026-03-25 05:30:50
+TKT-20260325-007,63,Feature Request,0.99,[Feature Request] Add PDF export for tasks and reports,"Summary
+The user is requesting the ability to export tasks as a PDF document. They need this capability to include task information in weekly reports for management in a professional, shareable format.
+
+User Need
+The user needs a simple way to convert task data into a PDF for external reporting. This would support weekly status reporting and make it easier to share progress with managers or stakeholders.
+
+Proposed Solution
+Add a PDF export option for tasks and reports. The export should consider common reporting needs such as task lists, applied filters, completed tasks, and date ranges, and support sharing or saving the generated PDF.
+
+Impact Assessment
+This request appears to have medium user impact with a strong demand signal for professional reporting workflows. No workaround was mentioned, suggesting that this capability could improve the app's usefulness for users who need to share task progress outside TaskPro.",Medium,,,"{""feature_name"":""PDF Task Export"",""description"":""The user wants the ability to export tasks as a PDF document. This would help them include task information in weekly reports to management, making it easier to share progress in a professional format."",""user_impact"":""Medium"",""demand_signal"":""Strong"",""existing_alternatives"":""No workaround mentioned."",""platform"":""Google Play""}","[""Validate demand for PDF export with other users who share task reports externally"",""Define export scope, such as task lists, filters, completed tasks, and date ranges"",""Assess implementation options for generating and sharing PDFs on Android and other platforms""]",8.0,"Well-structured feature request that matches the original feedback and clearly states the user need and proposed direction. Minor improvements could include narrowing the scope of the initial export format and clarifying whether this should apply to single tasks, task lists, or full reports first.",approved,0,2026-03-25 05:30:26,2026-03-25 05:30:31
+TKT-20260325-006,62,Praise,0.99,[Praise] User highlights intuitive UI and subscription value,"Summary
+User expresses strong satisfaction with TaskPro, describing it as the best productivity app available and emphasizing its clean interface, intuitive experience, and perceived subscription value.
+
+Key Positive Points
+- Clean, polished interface
+- Very intuitive to use
+- Strong overall satisfaction with the product
+- Subscription is seen as worth the cost
+
+Areas Highlighted
+- User experience and usability
+- Visual/interface design
+- Value perception for paid subscription
+- Overall product quality
+
+Environment
+- Source: App Store review
+- Rating: 5/5
+- Platform: App Store",Low,,,,"[""Share with product/design team as positive UX validation"",""Consider using themes from this feedback in marketing/testimonials if permitted"",""Track recurring praise around UI and subscription value""]",9.0,"Well-written praise ticket with a clear, correctly prefixed title and an accurate summary of the original feedback. Description is complete for a praise item and priority is appropriate; only minor gap is that the app version from the source feedback is not captured in the ticket environment details.",approved,0,2026-03-25 05:30:09,2026-03-25 05:30:13
+TKT-20260325-005,61,Bug,0.99,[Bug] Web tasks not syncing to mobile in v3.2.1,"Summary
+User reports that task data created or updated in the TaskPro web app is not appearing in the Android mobile app, resulting in apparent data loss and approximately 2 hours of lost work.
+
+Steps to Reproduce
+1. Create or update tasks in the TaskPro web version.
+2. Open the TaskPro mobile app version 3.2.1 on Android via Google Play.
+3. Allow the app to sync or manually refresh task data.
+4. Compare the task list on mobile with the web version.
+
+Expected Behavior
+Tasks created or updated on the web version should sync to the mobile app and appear correctly without data loss.
+
+Actual Behavior
+Tasks from the web version do not appear on mobile, indicating a sync failure and apparent loss of approximately 2 hours of work.
+
+Environment
+- Source: app_store_review / R005
+- Platform: Google Play
+- Mobile OS: Unknown Android version
+- App Version: 3.2.1
+- Device: Unknown
+- Affected Component: Sync",Critical,Critical,"{""affected_component"":""Sync"",""platform_details"":{""device"":""Unknown"",""os"":""Unknown"",""app_version"":""3.2.1""},""rating"":""1/5"",""source"":""app_store_review / R005""}",,"[""Investigate sync service failures between web and Android app version 3.2.1, including API and account state checks."",""Attempt to reproduce by creating tasks on web and validating mobile sync behavior on the current production build."",""Review logs and telemetry for missing task sync events and assess whether data is recoverable for affected users.""]",8.0,"Strong bug ticket with a clear title, impact, expected/actual behavior, and reasonable technical framing aligned to the original feedback. Minor gaps remain in environment detail and reproducibility evidence, so adding Android OS/device/account context and confirming whether the issue is consistently reproducible would make it fully backlog-ready.",approved,0,2026-03-25 05:29:53,2026-03-25 05:29:58
+TKT-20260325-004,60,Feature Request,0.98,[Feature Request] Add dark mode for nighttime use,"Summary
+The user is requesting a dark mode option to make TaskPro more comfortable to use at night. They report eye strain with the current interface during nighttime usage.
+
+User Need
+Users who use TaskPro in low-light environments need a darker theme to reduce eye strain and improve comfort. The request also suggests an accessibility and usability improvement for extended evening use.
+
+Proposed Solution
+Add a dark mode theme for the mobile app, ideally supporting both a manual theme toggle and optional system-based theme matching. Review whether this request already exists in the product or design backlog and assess implementation effort.
+
+Impact Assessment
+This request appears to have high user impact because it improves comfort for nighttime use and may benefit accessibility-sensitive users. Demand signal is strong based on the user's explicit pain point and positive overall sentiment, indicating dark mode could improve satisfaction without addressing a product defect.",High,,,"{""feature_name"":""Dark Mode Option"",""description"":""The user wants a dark mode theme for the app, specifically to make nighttime usage more comfortable. They mention eye strain when using the current interface at night, indicating a usability and accessibility benefit."",""user_impact"":""High"",""demand_signal"":""Strong"",""existing_alternatives"":""No workaround mentioned."",""platform"":""App Store"",""source"":""app_store_review / R004"",""rating"":""4/5""}","[""Review whether dark mode has already been requested or planned in the design backlog"",""Evaluate effort to support a system-based and manual dark theme toggle in the mobile app"",""Collect additional user feedback on theme preferences and nighttime usage patterns""]",9.0,"Strong feature ticket with a clear, correctly prefixed title and a well-structured description that captures the user need and proposed solution. Priority is slightly overstated from a single 4-star review, but the ticket is still actionable and technically consistent enough for backlog entry.",approved,0,2026-03-25 05:29:30,2026-03-25 05:29:35
+TKT-20260325-003,59,Bug,0.99,[Bug] Login hangs on infinite loader after update to v3.2.1,"Summary
+Users on Google Play report being unable to log in after updating TaskPro to version 3.2.1. Even after resetting their password multiple times, the login flow does not complete and remains stuck on a spinning loader.
+
+Steps to Reproduce
+1. Update the TaskPro app to version 3.2.1 from Google Play.
+2. Open the app and navigate to the login screen.
+3. Enter valid account credentials and attempt to log in.
+4. If login fails, use the password reset flow and reset the password.
+5. Return to the login screen and try logging in again.
+
+Expected Behavior
+User should be able to log in successfully after updating the app, including after resetting their password.
+
+Actual Behavior
+Login does not complete and the app shows a spinning loader indefinitely, even after multiple password reset attempts.
+
+Environment
+Platform: Google Play
+App Version: 3.2.1
+Device: Unknown
+OS: Unknown
+Source: app_store_review / R003",High,Major,"{""affected_component"":""Login"",""platform"":""Google Play"",""platform_details"":{""device"":""Unknown"",""os"":""Unknown"",""app_version"":""3.2.1""}}",,"[""Reproduce the issue on Android with app version 3.2.1, focusing on the login and password reset flow."",""Review authentication and API/network logs for requests that stall or fail after the 3.2.1 update."",""Assess impact scope and prepare a hotfix or rollback if the issue affects multiple users.""]",9.0,"Strong bug ticket: the title is specific and correctly prefixed, and the description captures the user impact, expected/actual behavior, app version, platform, and clear repro steps aligned to the original feedback. Minor gap: device/OS details are unknown, so exact reproduction environment is incomplete, but the ticket is still actionable and priority appears appropriate for a login blocker after an update.",approved,0,2026-03-25 05:29:08,2026-03-25 05:29:13
+TKT-20260325-002,58,Praise,0.99,[Praise] User loves new task management feature,"Summary
+User expresses strong satisfaction with TaskPro and specifically praises the new task management feature as highly valuable in daily use.
+
+Key Positive Points
+- User ""absolutely love[s]"" the app.
+- The new task management feature is described as a ""game changer.""
+- The user has been using the app daily for 3 months, indicating sustained engagement and satisfaction.
+
+Areas Highlighted
+- Overall app experience
+- New task management feature
+- Long-term daily usability
+- Strong App Store sentiment reflected in a 5/5 rating
+",Low,,,,"[""Share with product and marketing teams as positive customer evidence"",""Tag as feature-specific praise for the task management feature"",""Consider using themes from this feedback in testimonials or release impact tracking""]",9.0,"Strong praise ticket with a clear, correctly prefixed title and a description that accurately captures the original App Store review, including the specific feature praised and evidence of sustained daily use. Minor deduction because actionability is limited for an engineering backlog item and the ticket does not clearly indicate whether praise-category tickets should route outside engineering.",approved,0,2026-03-25 05:28:47,2026-03-25 05:28:52
+TKT-20260325-001,57,Bug,0.99,[Bug] Settings page crashes on Android 14 after v3.2.1,"Summary
+The app crashes every time the user attempts to open the Settings page. The issue started after updating to version 3.2.1 and appears reproducible on a Pixel 7 running Android 14.
+
+Steps to Reproduce
+1. Open TaskPro on a Pixel 7 running Android 14.
+2. Navigate to the Settings page.
+3. Attempt to open Settings after updating to app version 3.2.1.
+
+Expected Behavior
+The Settings page should open normally without crashing.
+
+Actual Behavior
+The app crashes every time the user tries to open the Settings page.
+
+Environment
+- Platform: Google Play
+- Source: app_store_review / R001
+- Device: Pixel 7
+- OS: Android 14
+- App Version: 3.2.1
+- Rating: 1/5",High,Major,"{""affected_component"":""Settings"",""platform_details"":{""device"":""Pixel 7"",""os"":""Android 14"",""app_version"":""3.2.1""},""source"":""app_store_review / R001"",""rating"":""1/5"",""platform"":""Google Play""}",,"[""Reproduce the crash on a Pixel 7 running Android 14 with app version 3.2.1."",""Review crash logs and recent changes related to the Settings screen in the latest update."",""Implement and validate a fix, then add regression testing for opening Settings on supported Android devices.""]",9.0,"Strong bug ticket with a clear, correctly prefixed title, accurate environment details, and reproducible steps that align well with the original feedback. Priority and technical framing are appropriate; the only minor gap is that repro is based on a single reported device/OS combination rather than broader impact validation.",approved,0,2026-03-25 05:28:29,2026-03-25 05:28:36

@@ -1,0 +1,26 @@
+review_id,platform,rating,review_text,user_name,date,app_version
+R001,Google Play,1,"App crashes every time I try to open the settings page. Started happening after the latest update. Using Pixel 7 on Android 14.",john_doe92,2026-03-15,3.2.1
+R002,App Store,5,"Absolutely love this app! The new task management feature is a game changer. Been using it daily for 3 months now.",sarah_k,2026-03-14,3.2.1
+R003,Google Play,2,"Can't login since the update to version 3.2.1. I've tried resetting my password three times but it just shows a spinning loader forever.",mike_t,2026-03-13,3.2.1
+R004,App Store,4,"Great app overall but would really love to see a dark mode option. My eyes hurt using it at night.",jenny_lee,2026-03-12,3.2.0
+R005,Google Play,1,"Data sync is completely broken. My tasks from the web version are not showing up on mobile. Lost 2 hours of work.",alex_w,2026-03-11,3.2.1
+R006,App Store,5,"Best productivity app on the market! Clean interface and very intuitive. Worth every penny of the subscription.",happy_user,2026-03-10,3.2.0
+R007,Google Play,3,"Please add the ability to export tasks as PDF. I need this for my weekly reports to management.",office_worker,2026-03-09,3.1.9
+R008,App Store,2,"The app is so slow since the last update. Takes 10+ seconds to load the dashboard. iPhone 14 Pro, iOS 17.3.",frustrated_user,2026-03-08,3.2.1
+R009,Google Play,4,"Would love to see calendar integration with Google Calendar. Currently I have to manually copy my deadlines.",productivity_fan,2026-03-07,3.2.0
+R010,App Store,1,"TERRIBLE customer service. I emailed support 3 times about a billing issue and nobody replied. Considering canceling.",angry_customer,2026-03-06,3.2.0
+R011,Google Play,5,"The collaboration features are fantastic. My team loves the shared boards. Keep up the great work!",team_lead,2026-03-05,3.2.0
+R012,App Store,3,"Would be nice to have recurring tasks. I have to recreate the same tasks every Monday which is tedious.",weekly_planner,2026-03-04,3.1.9
+R013,Google Play,1,"App crashes when I try to attach images to tasks. Samsung Galaxy S23, Android 14. Happens every single time.",photo_bug,2026-03-03,3.2.1
+R014,App Store,4,"Please add Siri shortcuts support so I can add tasks by voice. That would make this app perfect!",apple_fan,2026-03-02,3.2.0
+R015,Google Play,2,"Notifications are completely unreliable. I keep missing deadlines because reminders don't fire. Very frustrating.",missed_deadlines,2026-03-01,3.2.0
+R016,App Store,5,"Just upgraded to premium and it's totally worth it. The analytics dashboard is incredibly useful.",premium_lover,2026-02-28,3.2.0
+R017,Google Play,1,"Buy cheap supplements at www.best-deals.fake! Limited offer!!",spam_bot_01,2026-02-27,3.1.9
+R018,App Store,3,"The pricing is too expensive compared to competitors. $9.99/month is steep for a task manager.",price_sensitive,2026-02-26,3.2.0
+R019,Google Play,4,"Really solid app. Only suggestion: please add widget support for Android home screen.",widget_wanter,2026-02-25,3.1.9
+R020,App Store,1,"Lost all my data after the update. Months of project planning gone. This is unacceptable.",data_loss_victim,2026-02-24,3.2.1
+R021,Google Play,5,"Switched from Todoist and never looked back. The subtask feature is so much better here.",switcher,2026-02-23,3.2.0
+R022,App Store,2,"Battery drain is terrible. This app uses 30% of my battery daily. Please fix the background processes.",battery_saver,2026-02-22,3.2.1
+R023,Google Play,1,"asdkjfh aksdjfh random text 12345 test test test",gibberish_user,2026-02-21,3.1.9
+R024,App Store,4,"Please add a Pomodoro timer built into the task view. Would be amazing for focused work sessions.",focus_mode,2026-02-20,3.2.0
+R025,Google Play,2,"The search function is broken. Searching for task names returns no results even though the tasks exist. Pixel 8, Android 14.",search_broken,2026-02-19,3.2.1

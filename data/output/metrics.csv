@@ -1,0 +1,18 @@
+metric_name,metric_value,details
+total_feedback_processed,40,
+total_tickets_created,40,
+avg_quality_score,8.82,
+tickets_approved,40,
+tickets_revision_needed,0,
+error_count,0,
+avg_latency_ms,3745.10,
+category_bug,15,Bug
+category_complaint,4,Complaint
+category_feature_request,12,Feature Request
+category_praise,6,Praise
+category_spam,3,Spam
+avg_latency_bug_analyzer,4696.74,bug_analyzer
+avg_latency_classifier,1578.09,classifier
+avg_latency_feature_extractor,3219.95,feature_extractor
+avg_latency_quality_critic,5269.48,quality_critic
+avg_latency_ticket_creator,6156.12,ticket_creator

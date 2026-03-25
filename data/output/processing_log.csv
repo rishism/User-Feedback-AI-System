@@ -1,0 +1,255 @@
+feedback_id,ticket_id,agent_name,action,status,input_summary,output_summary,error_message,latency_ms,trace_id,created_at
+96,,quality_critic,process,success,item=E015,output_key=quality_review,,5387.181917001726,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:22
+96,TKT-20260325-040,ticket_creator,process,success,item=E015,output_key=ticket,,8261.50150000467,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:17
+96,,feature_extractor,extract,success,"category=Feature Request, source=E015","feature=CSV Task Import, impact=High",,3149.4836249912623,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:09
+96,,feature_extractor,process,success,item=E015,output_key=analysis,,3160.1260419993196,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:09
+96,,classifier,classify,success,text_length=199,"category=Feature Request, confidence=0.99",,1562.0209999906365,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:04
+96,,classifier,process,success,item=E015,output_key=classification,,1570.8823750028387,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:04
+95,,quality_critic,process,success,item=E014,output_key=quality_review,,5867.771458986681,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:41:01
+95,TKT-20260325-039,ticket_creator,process,success,item=E014,output_key=ticket,,6266.951458994299,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:55
+95,,bug_analyzer,analyze,success,"category=Bug, source=E014","severity=Major, component=Notifications",,4765.875874989433,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:49
+95,,bug_analyzer,process,success,item=E014,output_key=analysis,,4775.528083991958,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:49
+95,,classifier,classify,success,text_length=258,"category=Bug, confidence=0.98",,1349.2064169840887,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:43
+95,,classifier,process,success,item=E014,output_key=classification,,1358.159124996746,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:43
+94,,quality_critic,process,success,item=E013,output_key=quality_review,,5473.472249985207,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:40
+94,TKT-20260325-038,ticket_creator,process,success,item=E013,output_key=ticket,,6628.631833998952,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:35
+94,,classifier,classify,success,text_length=206,"category=Complaint, confidence=0.97",,1501.1003340187017,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:27
+94,,classifier,process,success,item=E013,output_key=classification,,1509.5278330263682,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:27
+93,,quality_critic,process,success,item=E012,output_key=quality_review,,5060.223749984289,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:24
+93,TKT-20260325-037,ticket_creator,process,success,item=E012,output_key=ticket,,7432.2915420052595,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:19
+93,,feature_extractor,extract,success,"category=Feature Request, source=E012","feature=Manager Progress Dashboard, impact=High",,2992.7449169917963,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:11
+93,,feature_extractor,process,success,item=E012,output_key=analysis,,3002.0631670195144,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:11
+93,,classifier,classify,success,text_length=214,"category=Feature Request, confidence=0.98",,1501.3860420149285,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:07
+93,,classifier,process,success,item=E012,output_key=classification,,1511.0866249888204,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:07
+92,,quality_critic,process,success,item=E011,output_key=quality_review,,5213.5259580099955,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:40:04
+92,TKT-20260325-036,ticket_creator,process,success,item=E011,output_key=ticket,,6095.264624978881,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:59
+92,,bug_analyzer,analyze,success,"category=Bug, source=E011","severity=Major, component=Tasks",,3921.274499996798,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:53
+92,,bug_analyzer,process,success,item=E011,output_key=analysis,,3928.8629590009805,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:53
+92,,classifier,classify,success,text_length=240,"category=Bug, confidence=0.99",,1399.9870410189033,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:47
+92,,classifier,process,success,item=E011,output_key=classification,,1409.9464589962736,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:47
+91,,quality_critic,process,success,item=E010,output_key=quality_review,,4706.419000023743,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:45
+91,TKT-20260325-035,ticket_creator,process,success,item=E010,output_key=ticket,,3767.5420419836883,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:40
+91,,classifier,classify,success,text_length=178,"category=Spam, confidence=0.99",,1218.4961250168271,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:35
+91,,classifier,process,success,item=E010,output_key=classification,,1228.227625018917,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:35
+90,,quality_critic,process,success,item=E009,output_key=quality_review,,4466.265625000233,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:32
+90,TKT-20260325-034,ticket_creator,process,success,item=E009,output_key=ticket,,6644.968875014456,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:28
+90,,bug_analyzer,analyze,success,"category=Bug, source=E009","severity=Major, component=Sync",,5704.652708984213,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:21
+90,,bug_analyzer,process,success,item=E009,output_key=analysis,,5713.39837499545,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:21
+90,,classifier,classify,success,text_length=266,"category=Bug, confidence=0.98",,1527.8678339964245,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:14
+90,,classifier,process,success,item=E009,output_key=classification,,1538.2880840043072,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:14
+89,,quality_critic,process,success,item=E008,output_key=quality_review,,5328.362499974901,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:11
+89,TKT-20260325-033,ticket_creator,process,success,item=E008,output_key=ticket,,8058.423999988008,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:39:06
+89,,feature_extractor,extract,success,"category=Feature Request, source=E008","feature=Task Data API Access, impact=High",,3471.371999999974,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:58
+89,,feature_extractor,process,success,item=E008,output_key=analysis,,3479.225791990757,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:58
+89,,classifier,classify,success,text_length=237,"category=Feature Request, confidence=0.99",,1506.6325409861747,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:53
+89,,classifier,process,success,item=E008,output_key=classification,,1513.8292920019012,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:53
+88,,quality_critic,process,success,item=E007,output_key=quality_review,,4875.5091250059195,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:50
+88,TKT-20260325-032,ticket_creator,process,success,item=E007,output_key=ticket,,5620.437208999647,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:45
+88,,classifier,classify,success,text_length=241,"category=Complaint, confidence=0.98",,1566.0615419910755,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:38
+88,,classifier,process,success,item=E007,output_key=classification,,1575.5407079996075,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:38
+87,,quality_critic,process,success,item=E006,output_key=quality_review,,4848.866375017678,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:36
+87,TKT-20260325-031,ticket_creator,process,success,item=E006,output_key=ticket,,4234.877041977597,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:31
+87,,classifier,classify,success,text_length=174,"category=Praise, confidence=0.99",,1790.6287079968024,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:25
+87,,classifier,process,success,item=E006,output_key=classification,,1800.1278339943383,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:25
+86,,quality_critic,process,success,item=E005,output_key=quality_review,,4800.079500011634,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:22
+86,TKT-20260325-030,ticket_creator,process,success,item=E005,output_key=ticket,,7595.334542013006,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:17
+86,,bug_analyzer,analyze,success,"category=Bug, source=E005","severity=Critical, component=Projects/Tasks",,3963.1964589934796,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:10
+86,,bug_analyzer,process,success,item=E005,output_key=analysis,,3971.5556669980288,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:10
+86,,classifier,classify,success,text_length=250,"category=Bug, confidence=0.99",,1360.0610420107841,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:04
+86,,classifier,process,success,item=E005,output_key=classification,,1370.1854160171933,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:04
+85,,quality_critic,process,success,item=E004,output_key=quality_review,,4864.986000000499,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:38:02
+85,TKT-20260325-029,ticket_creator,process,success,item=E004,output_key=ticket,,7375.4058750055265,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:57
+85,,feature_extractor,extract,success,"category=Feature Request, source=E004","feature=Task Dependency Management, impact=High",,2839.9007080006413,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:49
+85,,feature_extractor,process,success,item=E004,output_key=analysis,,2849.597583990544,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:49
+85,,classifier,classify,success,text_length=220,"category=Feature Request, confidence=0.99",,1203.5642080008984,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:45
+85,,classifier,process,success,item=E004,output_key=classification,,1213.850750005804,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:45
+84,,quality_critic,process,success,item=E003,output_key=quality_review,,4933.157665975159,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:43
+84,TKT-20260325-028,ticket_creator,process,success,item=E003,output_key=ticket,,6845.654542004922,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:38
+84,,bug_analyzer,analyze,success,"category=Bug, source=E003","severity=Major, component=Login",,4352.24408301292,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:31
+84,,bug_analyzer,process,success,item=E003,output_key=analysis,,4360.4024999949615,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:31
+84,,classifier,classify,success,text_length=247,"category=Bug, confidence=0.98",,1534.2555830138735,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:26
+84,,classifier,process,success,item=E003,output_key=classification,,1544.5170419989154,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:26
+83,,quality_critic,process,success,item=E002,output_key=quality_review,,4703.069916984532,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:23
+83,TKT-20260325-027,ticket_creator,process,success,item=E002,output_key=ticket,,7047.742750000907,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:18
+83,,feature_extractor,extract,success,"category=Feature Request, source=E002","feature=Dark Mode Theme, impact=High",,3397.0173749839887,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:11
+83,,feature_extractor,process,success,item=E002,output_key=analysis,,3407.8584160015453,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:11
+83,,classifier,classify,success,text_length=207,"category=Feature Request, confidence=0.99",,1490.1495410013013,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:07
+83,,classifier,process,success,item=E002,output_key=classification,,1499.7654579929076,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:07
+82,,quality_critic,process,success,item=E001,output_key=quality_review,,5499.53120801365,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:37:03
+82,TKT-20260325-026,ticket_creator,process,success,item=E001,output_key=ticket,,5821.485957974801,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:36:58
+82,,bug_analyzer,analyze,success,"category=Bug, source=E001","severity=Critical, component=Performance",,5111.345666984562,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:36:52
+82,,bug_analyzer,process,success,item=E001,output_key=analysis,,5120.938916981686,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:36:52
+82,,classifier,classify,success,text_length=221,"category=Bug, confidence=0.99",,1824.054666009033,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:36:45
+82,,classifier,process,success,item=E001,output_key=classification,,1833.9199159818236,9da2a6e1-f76f-4594-aa7a-be40d1b3a25e,2026-03-25 05:36:45
+82,,csv_agent,ingest,success,"source=support_email, id=E001",feedback_id=82,,,,2026-03-25 05:36:43
+83,,csv_agent,ingest,success,"source=support_email, id=E002",feedback_id=83,,,,2026-03-25 05:36:43
+84,,csv_agent,ingest,success,"source=support_email, id=E003",feedback_id=84,,,,2026-03-25 05:36:43
+85,,csv_agent,ingest,success,"source=support_email, id=E004",feedback_id=85,,,,2026-03-25 05:36:43
+86,,csv_agent,ingest,success,"source=support_email, id=E005",feedback_id=86,,,,2026-03-25 05:36:43
+87,,csv_agent,ingest,success,"source=support_email, id=E006",feedback_id=87,,,,2026-03-25 05:36:43
+88,,csv_agent,ingest,success,"source=support_email, id=E007",feedback_id=88,,,,2026-03-25 05:36:43
+89,,csv_agent,ingest,success,"source=support_email, id=E008",feedback_id=89,,,,2026-03-25 05:36:43
+90,,csv_agent,ingest,success,"source=support_email, id=E009",feedback_id=90,,,,2026-03-25 05:36:43
+91,,csv_agent,ingest,success,"source=support_email, id=E010",feedback_id=91,,,,2026-03-25 05:36:43
+92,,csv_agent,ingest,success,"source=support_email, id=E011",feedback_id=92,,,,2026-03-25 05:36:43
+93,,csv_agent,ingest,success,"source=support_email, id=E012",feedback_id=93,,,,2026-03-25 05:36:43
+94,,csv_agent,ingest,success,"source=support_email, id=E013",feedback_id=94,,,,2026-03-25 05:36:43
+95,,csv_agent,ingest,success,"source=support_email, id=E014",feedback_id=95,,,,2026-03-25 05:36:43
+96,,csv_agent,ingest,success,"source=support_email, id=E015",feedback_id=96,,,,2026-03-25 05:36:43
+81,,quality_critic,process,success,item=R025,output_key=quality_review,,4304.563750018133,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:54
+81,TKT-20260325-025,ticket_creator,process,success,item=R025,output_key=ticket,,4888.668958010385,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:50
+81,,bug_analyzer,analyze,success,"category=Bug, source=R025","severity=Major, component=Search",,3891.6144160029944,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:45
+81,,bug_analyzer,process,success,item=R025,output_key=analysis,,3902.97104199999,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:45
+81,,classifier,classify,success,text_length=124,"category=Bug, confidence=0.98",,1327.3776670102961,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:40
+81,,classifier,process,success,item=R025,output_key=classification,,1336.3272910064552,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:40
+80,,quality_critic,process,success,item=R024,output_key=quality_review,,4985.0205419934355,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:37
+80,TKT-20260325-024,ticket_creator,process,success,item=R024,output_key=ticket,,9203.528583981097,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:32
+80,,feature_extractor,extract,success,"category=Feature Request, source=R024","feature=Built-in Pomodoro Timer, impact=Medium",,3078.5588749859016,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:23
+80,,feature_extractor,process,success,item=R024,output_key=analysis,,3087.7277499821503,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:23
+80,,classifier,classify,success,text_length=97,"category=Feature Request, confidence=0.99",,1927.2552079928573,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:19
+80,,classifier,process,success,item=R024,output_key=classification,,1935.9151250100695,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:19
+79,,quality_critic,process,success,item=R023,output_key=quality_review,,5016.726166999433,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:15
+79,TKT-20260325-023,ticket_creator,process,success,item=R023,output_key=ticket,,4191.53945799917,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:10
+79,,classifier,classify,success,text_length=48,"category=Spam, confidence=0.99",,2323.450874973787,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:04
+79,,classifier,process,success,item=R023,output_key=classification,,2331.9297909911256,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:04
+78,,quality_critic,process,success,item=R022,output_key=quality_review,,5077.888333995361,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:35:01
+78,TKT-20260325-022,ticket_creator,process,success,item=R022,output_key=ticket,,5013.113583001541,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:56
+78,,bug_analyzer,analyze,success,"category=Bug, source=R022","severity=Major, component=Performance",,4923.915874998784,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:51
+78,,bug_analyzer,process,success,item=R022,output_key=analysis,,4929.9785000039265,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:51
+78,,classifier,classify,success,text_length=102,"category=Bug, confidence=0.95",,1293.2454160181805,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:44
+78,,classifier,process,success,item=R022,output_key=classification,,1303.8279589964077,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:44
+77,,quality_critic,process,success,item=R021,output_key=quality_review,,4700.8074579935055,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:41
+77,TKT-20260325-021,ticket_creator,process,success,item=R021,output_key=ticket,,4910.854665999068,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:37
+77,,classifier,classify,success,text_length=88,"category=Praise, confidence=0.99",,1311.4230000064708,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:31
+77,,classifier,process,success,item=R021,output_key=classification,,1320.2063750068191,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:31
+76,,quality_critic,process,success,item=R020,output_key=quality_review,,6548.993124975823,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:28
+76,TKT-20260325-020,ticket_creator,process,success,item=R020,output_key=ticket,,6912.486167013412,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:21
+76,,bug_analyzer,analyze,success,"category=Bug, source=R020","severity=Critical, component=Sync",,5036.921958992025,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:14
+76,,bug_analyzer,process,success,item=R020,output_key=analysis,,5046.542916999897,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:14
+76,,classifier,classify,success,text_length=89,"category=Bug, confidence=0.99",,1459.1051249881275,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:08
+76,,classifier,process,success,item=R020,output_key=classification,,1467.7093749924097,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:08
+75,,quality_critic,process,success,item=R019,output_key=quality_review,,5125.300124986097,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:05
+75,TKT-20260325-019,ticket_creator,process,success,item=R019,output_key=ticket,,7088.880999974208,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:34:00
+75,,feature_extractor,extract,success,"category=Feature Request, source=R019","feature=Android Home Screen Widget, impact=Medium",,3683.1289999827277,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:53
+75,,feature_extractor,process,success,item=R019,output_key=analysis,,3693.0105420178734,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:53
+75,,classifier,classify,success,text_length=85,"category=Feature Request, confidence=0.97",,1551.6691660159267,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:48
+75,,classifier,process,success,item=R019,output_key=classification,,1561.8376670172438,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:48
+74,,quality_critic,process,success,item=R018,output_key=quality_review,,5318.928874999983,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:45
+74,TKT-20260325-018,ticket_creator,process,success,item=R018,output_key=ticket,,5017.254041973501,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:40
+74,,classifier,classify,success,text_length=94,"category=Complaint, confidence=0.99",,1875.4571670142468,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:33
+74,,classifier,process,success,item=R018,output_key=classification,,1884.109125006944,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:33
+73,,quality_critic,process,success,item=R017,output_key=quality_review,,5321.0698750044685,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:30
+73,TKT-20260325-017,ticket_creator,process,success,item=R017,output_key=ticket,,4883.127707988024,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:25
+73,,classifier,classify,success,text_length=61,"category=Spam, confidence=0.99",,1944.2372499906924,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:19
+73,,classifier,process,success,item=R017,output_key=classification,,1952.9404159984551,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:19
+72,,quality_critic,process,success,item=R016,output_key=quality_review,,4795.403958996758,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:15
+72,TKT-20260325-016,ticket_creator,process,success,item=R016,output_key=ticket,,4364.242707990343,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:10
+72,,classifier,classify,success,text_length=97,"category=Praise, confidence=0.99",,1522.3565830092411,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:05
+72,,classifier,process,success,item=R016,output_key=classification,,1530.5171250074636,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:05
+71,,quality_critic,process,success,item=R015,output_key=quality_review,,5067.920707981102,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:33:02
+71,TKT-20260325-015,ticket_creator,process,success,item=R015,output_key=ticket,,5254.602208995493,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:57
+71,,bug_analyzer,analyze,success,"category=Bug, source=R015","severity=Major, component=Notifications",,5319.302707997849,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:52
+71,,bug_analyzer,process,success,item=R015,output_key=analysis,,5329.85166599974,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:52
+71,,classifier,classify,success,text_length=113,"category=Bug, confidence=0.96",,1598.8715419953223,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:45
+71,,classifier,process,success,item=R015,output_key=classification,,1607.207875000313,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:45
+70,,quality_critic,process,success,item=R014,output_key=quality_review,,4949.11737498478,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:42
+70,TKT-20260325-014,ticket_creator,process,success,item=R014,output_key=ticket,,7322.895042016171,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:37
+70,,feature_extractor,extract,success,"category=Feature Request, source=R014","feature=Siri Shortcuts Support, impact=Medium",,3113.655209017452,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:30
+70,,feature_extractor,process,success,item=R014,output_key=analysis,,3123.017958016135,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:30
+70,,classifier,classify,success,text_length=96,"category=Feature Request, confidence=0.98",,1595.9092080011033,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:25
+70,,classifier,process,success,item=R014,output_key=classification,,1604.7577499994077,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:25
+69,,quality_critic,process,success,item=R013,output_key=quality_review,,5111.843084014254,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:23
+69,TKT-20260325-013,ticket_creator,process,success,item=R013,output_key=ticket,,6189.490874996409,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:17
+69,,bug_analyzer,analyze,success,"category=Bug, source=R013","severity=Major, component=Tasks",,4069.1909579909407,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:11
+69,,bug_analyzer,process,success,item=R013,output_key=analysis,,4080.1597080135252,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:11
+69,,classifier,classify,success,text_length=108,"category=Bug, confidence=0.99",,1408.7731250037905,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:06
+69,,classifier,process,success,item=R013,output_key=classification,,1415.9330000111368,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:06
+68,,quality_critic,process,success,item=R012,output_key=quality_review,,5321.4302500127815,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:32:03
+68,TKT-20260325-012,ticket_creator,process,success,item=R012,output_key=ticket,,6842.826999985846,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:58
+68,,feature_extractor,extract,success,"category=Feature Request, source=R012","feature=Recurring Task Creation, impact=High",,3154.209250002168,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:51
+68,,feature_extractor,process,success,item=R012,output_key=analysis,,3166.183541994542,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:51
+68,,classifier,classify,success,text_length=103,"category=Feature Request, confidence=0.99",,1736.5247499838006,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:46
+68,,classifier,process,success,item=R012,output_key=classification,,1749.4996660097968,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:46
+67,,quality_critic,process,success,item=R011,output_key=quality_review,,5078.393833013251,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:43
+67,TKT-20260325-011,ticket_creator,process,success,item=R011,output_key=ticket,,4093.3875409828033,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:38
+67,,classifier,classify,success,text_length=98,"category=Praise, confidence=0.99",,1841.6856249968987,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:33
+67,,classifier,process,success,item=R011,output_key=classification,,1850.9987909928896,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:33
+66,,quality_critic,process,success,item=R010,output_key=quality_review,,6149.246291985037,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:29
+66,TKT-20260325-010,ticket_creator,process,success,item=R010,output_key=ticket,,6954.244083026424,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:23
+66,,classifier,classify,success,text_length=117,"category=Complaint, confidence=0.99",,1492.640291020507,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:15
+66,,classifier,process,success,item=R010,output_key=classification,,1510.5481250211596,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:15
+65,,quality_critic,process,success,item=R009,output_key=quality_review,,4821.566291997442,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:12
+65,TKT-20260325-009,ticket_creator,process,success,item=R009,output_key=ticket,,7093.384916981449,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:07
+65,,feature_extractor,extract,success,"category=Feature Request, source=R009","feature=Google Calendar Integration, impact=High",,3786.4846249867696,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:00
+65,,feature_extractor,process,success,item=R009,output_key=analysis,,3802.037207991816,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:31:00
+65,,classifier,classify,success,text_length=108,"category=Feature Request, confidence=0.99",,1514.6815839980263,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:55
+65,,classifier,process,success,item=R009,output_key=classification,,1523.0606670083944,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:55
+64,,quality_critic,process,success,item=R008,output_key=quality_review,,5302.37487499835,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:52
+64,TKT-20260325-008,ticket_creator,process,success,item=R008,output_key=ticket,,5613.142624992179,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:47
+64,,bug_analyzer,analyze,success,"category=Bug, source=R008","severity=Major, component=Performance",,4070.5407499917783,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:41
+64,,bug_analyzer,process,success,item=R008,output_key=analysis,,4080.5297500046436,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:41
+64,,classifier,classify,success,text_length=107,"category=Bug, confidence=0.97",,1517.3047090065666,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:36
+64,,classifier,process,success,item=R008,output_key=classification,,1531.3253749918658,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:36
+63,,quality_critic,process,success,item=R007,output_key=quality_review,,5607.3026660014875,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:33
+63,TKT-20260325-007,ticket_creator,process,success,item=R007,output_key=ticket,,5642.66862499062,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:27
+63,,feature_extractor,extract,success,"category=Feature Request, source=R007","feature=PDF Task Export, impact=Medium",,2693.1290000211447,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:22
+63,,feature_extractor,process,success,item=R007,output_key=analysis,,2704.3940419971477,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:22
+63,,classifier,classify,success,text_length=95,"category=Feature Request, confidence=0.99",,1430.1969580119476,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:18
+63,,classifier,process,success,item=R007,output_key=classification,,1440.9993329900317,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:18
+62,,quality_critic,process,success,item=R006,output_key=quality_review,,4785.9027920058,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:15
+62,TKT-20260325-006,ticket_creator,process,success,item=R006,output_key=ticket,,5010.887415992329,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:10
+62,,classifier,classify,success,text_length=111,"category=Praise, confidence=0.99",,1440.0654580094852,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:04
+62,,classifier,process,success,item=R006,output_key=classification,,1449.1581250040326,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:04
+61,,quality_critic,process,success,item=R005,output_key=quality_review,,5528.93391699763,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:30:00
+61,TKT-20260325-005,ticket_creator,process,success,item=R005,output_key=ticket,,6547.166958014714,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:55
+61,,bug_analyzer,analyze,success,"category=Bug, source=R005","severity=Critical, component=Sync",,5814.042457990581,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:48
+61,,bug_analyzer,process,success,item=R005,output_key=analysis,,5824.157416995149,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:48
+61,,classifier,classify,success,text_length=113,"category=Bug, confidence=0.99",,1529.080000007525,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:40
+61,,classifier,process,success,item=R005,output_key=classification,,1537.7044999913778,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:40
+60,,quality_critic,process,success,item=R004,output_key=quality_review,,5945.086000021547,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:37
+60,TKT-20260325-004,ticket_creator,process,success,item=R004,output_key=ticket,,8744.332707981812,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:31
+60,,feature_extractor,extract,success,"category=Feature Request, source=R004","feature=Dark Mode Option, impact=High",,3216.186542005744,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:22
+60,,feature_extractor,process,success,item=R004,output_key=analysis,,3227.6362919947132,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:22
+60,,classifier,classify,success,text_length=98,"category=Feature Request, confidence=0.98",,1692.4562080239411,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:18
+60,,classifier,process,success,item=R004,output_key=classification,,1701.8258750031237,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:18
+59,,quality_critic,process,success,item=R003,output_key=quality_review,,5678.966250008671,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:15
+59,TKT-20260325-003,ticket_creator,process,success,item=R003,output_key=ticket,,6076.762499986216,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:09
+59,,bug_analyzer,analyze,success,"category=Bug, source=R003","severity=Major, component=Login",,4916.247749992181,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:03
+59,,bug_analyzer,process,success,item=R003,output_key=analysis,,4926.0158330143895,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:29:03
+59,,classifier,classify,success,text_length=136,"category=Bug, confidence=0.99",,1723.3891669893637,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:56
+59,,classifier,process,success,item=R003,output_key=classification,,1733.4930410142988,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:56
+58,,quality_critic,process,success,item=R002,output_key=quality_review,,6024.901749973651,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:53
+58,TKT-20260325-002,ticket_creator,process,success,item=R002,output_key=ticket,,4480.6282079953235,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:47
+58,,classifier,classify,success,text_length=114,"category=Praise, confidence=0.99",,1666.6733750025742,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:41
+58,,classifier,process,success,item=R002,output_key=classification,,1676.6057919885498,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:41
+57,,quality_critic,process,success,item=R001,output_key=quality_review,,8183.279582997784,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:38
+57,TKT-20260325-001,ticket_creator,process,success,item=R001,output_key=ticket,,6208.3134170097765,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:30
+57,,bug_analyzer,analyze,success,"category=Bug, source=R001","severity=Major, component=Settings",,4520.091459009564,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:24
+57,,bug_analyzer,process,success,item=R001,output_key=analysis,,4530.985958001111,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:24
+57,,classifier,classify,success,text_length=127,"category=Bug, confidence=0.99",,1865.9249999909662,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:18
+57,,classifier,process,success,item=R001,output_key=classification,,1885.4999169998337,83392e9a-d387-41f8-82f2-0c2c79e14ec7,2026-03-25 05:28:18
+57,,csv_agent,ingest,success,"source=app_store_review, id=R001",feedback_id=57,,,,2026-03-25 05:28:15
+58,,csv_agent,ingest,success,"source=app_store_review, id=R002",feedback_id=58,,,,2026-03-25 05:28:15
+59,,csv_agent,ingest,success,"source=app_store_review, id=R003",feedback_id=59,,,,2026-03-25 05:28:15
+60,,csv_agent,ingest,success,"source=app_store_review, id=R004",feedback_id=60,,,,2026-03-25 05:28:15
+61,,csv_agent,ingest,success,"source=app_store_review, id=R005",feedback_id=61,,,,2026-03-25 05:28:15
+62,,csv_agent,ingest,success,"source=app_store_review, id=R006",feedback_id=62,,,,2026-03-25 05:28:15
+63,,csv_agent,ingest,success,"source=app_store_review, id=R007",feedback_id=63,,,,2026-03-25 05:28:15
+64,,csv_agent,ingest,success,"source=app_store_review, id=R008",feedback_id=64,,,,2026-03-25 05:28:15
+65,,csv_agent,ingest,success,"source=app_store_review, id=R009",feedback_id=65,,,,2026-03-25 05:28:15
+66,,csv_agent,ingest,success,"source=app_store_review, id=R010",feedback_id=66,,,,2026-03-25 05:28:15
+67,,csv_agent,ingest,success,"source=app_store_review, id=R011",feedback_id=67,,,,2026-03-25 05:28:15
+68,,csv_agent,ingest,success,"source=app_store_review, id=R012",feedback_id=68,,,,2026-03-25 05:28:15
+69,,csv_agent,ingest,success,"source=app_store_review, id=R013",feedback_id=69,,,,2026-03-25 05:28:15
+70,,csv_agent,ingest,success,"source=app_store_review, id=R014",feedback_id=70,,,,2026-03-25 05:28:15
+71,,csv_agent,ingest,success,"source=app_store_review, id=R015",feedback_id=71,,,,2026-03-25 05:28:15
+72,,csv_agent,ingest,success,"source=app_store_review, id=R016",feedback_id=72,,,,2026-03-25 05:28:15
+73,,csv_agent,ingest,success,"source=app_store_review, id=R017",feedback_id=73,,,,2026-03-25 05:28:15
+74,,csv_agent,ingest,success,"source=app_store_review, id=R018",feedback_id=74,,,,2026-03-25 05:28:15
+75,,csv_agent,ingest,success,"source=app_store_review, id=R019",feedback_id=75,,,,2026-03-25 05:28:15
+76,,csv_agent,ingest,success,"source=app_store_review, id=R020",feedback_id=76,,,,2026-03-25 05:28:15
+77,,csv_agent,ingest,success,"source=app_store_review, id=R021",feedback_id=77,,,,2026-03-25 05:28:15
+78,,csv_agent,ingest,success,"source=app_store_review, id=R022",feedback_id=78,,,,2026-03-25 05:28:15
+79,,csv_agent,ingest,success,"source=app_store_review, id=R023",feedback_id=79,,,,2026-03-25 05:28:15
+80,,csv_agent,ingest,success,"source=app_store_review, id=R024",feedback_id=80,,,,2026-03-25 05:28:15
+81,,csv_agent,ingest,success,"source=app_store_review, id=R025",feedback_id=81,,,,2026-03-25 05:28:15

@@ -1,30 +1,41 @@
 # Intelligent User Feedback Analysis and Action System
 
-A multi-agent AI system that automates the processing of user feedback from app store reviews and support emails. Built with **LangChain + LangGraph** for agent orchestration, **FastMCP** for ticket management, **Streamlit** for the UI, and **Langfuse** for observability.
+A multi-agent AI system that automates the processing of user feedback from app store reviews and support emails. Built with **LangChain + LangGraph** for agent orchestration, **FastMCP** for ticket management via MCP (SSE transport), **Streamlit** for the UI, and **Langfuse** for observability.
 
 ## Architecture
 
-### 6-Agent Pipeline (LangGraph)
+### Hybrid Supervisor Pipeline (LangGraph)
+
+The pipeline uses a **hybrid supervisor** pattern — most transitions are deterministic graph edges, but an LLM-powered supervisor makes routing decisions at two branching points:
+
+1. **Post-classification**: Which specialist agent should analyze this feedback? (bug_analyzer, feature_extractor, or skip to ticketing)
+2. **Post-quality-review**: Is the ticket good enough to finalize, or should it be sent back for revision?
 
 ```
 CSV Upload / Manual Input (Streamlit)
-  -> CSV Agent (parse & store in SQLite)
-    -> Feedback Classifier (LLM: Bug/Feature/Praise/Complaint/Spam)
-      -> Bug Analyzer (if Bug) --------+
-      -> Feature Extractor (if Feature)-+-> Ticket Creator (MCP -> SQLite)
-      -> Direct (if other) ------------+      -> Quality Critic
-                                                  -> Approved? -> Done
-                                                  -> Rejected? -> Revise (max 2x)
+  → Ingest (CSV Agent: parse & store in SQLite)
+    → Classifier (LLM: Bug / Feature / Praise / Complaint / Spam)
+      → Supervisor (LLM routing decision)
+        → Bug Analyzer (ReAct agent)  ───────┐
+        → Feature Extractor (ReAct agent) ───┤
+        → Direct to ticketing ───────────────┘
+          → Ticket Creator (ReAct agent + MCP tool-calling)
+            → Quality Critic (ReAct agent + MCP tool-calling)
+              → Supervisor (LLM routing decision)
+                → Approved? → Finalize → Next item (or END)
+                → Rejected? → Back to Ticket Creator (max 2 revisions)
 ```
+
+Agents communicate with the ticket database through an **MCP server** running on SSE transport (`localhost:8765`). The ticket creator and quality critic use ReAct-style tool-calling to create, update, and query tickets autonomously.
 
 ### Tech Stack
 
 | Component | Technology |
 |---|---|
-| Language | Python 3.12 |
+| Language | Python 3.14 |
 | Agent Framework | LangChain + LangGraph |
 | LLM | OpenAI GPT (gpt-5.4) |
-| Ticket System | FastMCP + SQLite |
+| Ticket System | FastMCP (SSE transport) + SQLite |
 | Database | SQLite |
 | UI | Streamlit |
 | Observability | Langfuse |
@@ -40,7 +51,9 @@ CSV Upload / Manual Input (Streamlit)
 
 ```bash
 cd User_Feedback_AI_system
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
 ```
 
 ### 3. Configure Environment
@@ -73,7 +86,9 @@ This opens the web interface with 4 pages:
 1. **Upload & Process** - Upload CSV files or submit manual feedback
 2. **Dashboard** - View, search, and edit generated tickets
 3. **Analytics** - Charts, metrics, and classification accuracy
-4. **Configuration** - Adjust thresholds and test API connections
+4. **Configuration** - Adjust thresholds, agent iterations, and test API connections
+
+The MCP server is auto-started on the first pipeline run (no manual setup needed).
 
 ### Processing Mock Data
 
@@ -101,14 +116,18 @@ User_Feedback_AI_system/
 │   ├── agents/
 │   │   ├── csv_agent.py        # CSV parsing and ingestion
 │   │   ├── classifier.py       # LLM-based 5-category classifier
-│   │   ├── bug_analyzer.py     # Bug technical detail extraction
-│   │   ├── feature_extractor.py # Feature request analysis
-│   │   ├── ticket_creator.py   # Ticket generation + MCP client
-│   │   └── quality_critic.py   # Ticket quality review
+│   │   ├── bug_analyzer.py     # Bug technical detail extraction (ReAct)
+│   │   ├── feature_extractor.py # Feature request analysis (ReAct)
+│   │   ├── ticket_creator.py   # Ticket generation via MCP tools (ReAct)
+│   │   ├── quality_critic.py   # Ticket quality review via MCP tools (ReAct)
+│   │   └── supervisor.py       # LLM-driven routing supervisor
+│   ├── tools/
+│   │   ├── mcp_tools.py        # MCP SSE client + server auto-start
+│   │   └── db_tools.py         # LangChain @tool wrappers for DB queries
 │   ├── graph/
 │   │   └── workflow.py         # LangGraph StateGraph definition
 │   ├── mcp_server/
-│   │   └── server.py           # FastMCP ticket management server
+│   │   └── server.py           # FastMCP ticket management server (SSE)
 │   ├── observability/
 │   │   ├── tracing.py          # Langfuse integration
 │   │   └── metrics.py          # Processing metrics
@@ -117,7 +136,7 @@ User_Feedback_AI_system/
 ├── streamlit_app/
 │   ├── app.py                  # Main entry point
 │   └── pages/                  # Streamlit multi-page app
-├── tests/                      # Test suite
+├── tests/                      # Test suite (43 tests)
 ├── .env.example                # Environment template
 ├── pyproject.toml              # Project metadata
 └── requirements.txt            # Dependencies
@@ -126,13 +145,13 @@ User_Feedback_AI_system/
 ## Running Tests
 
 ```bash
-pip install pytest
+pip install -e ".[dev]"
 pytest tests/ -v
 ```
 
 ## Configuration
 
-All settings can be configured via the `.env` file:
+All settings can be configured via the `.env` file or the Streamlit Configuration page:
 
 | Variable | Default | Description |
 |---|---|---|
@@ -141,6 +160,7 @@ All settings can be configured via the `.env` file:
 | `CLASSIFICATION_CONFIDENCE_THRESHOLD` | `0.7` | Min confidence for classification |
 | `QUALITY_AUTO_APPROVE_THRESHOLD` | `7.0` | Min quality score for auto-approval |
 | `MAX_REVISION_COUNT` | `2` | Max ticket revision attempts |
+| `MAX_AGENT_ITERATIONS` | `5` | Max ReAct agent tool-calling iterations |
 | `LANGFUSE_PUBLIC_KEY` | - | Langfuse public key (optional) |
 | `LANGFUSE_SECRET_KEY` | - | Langfuse secret key (optional) |
 
@@ -153,13 +173,15 @@ All settings can be configured via the `.env` file:
 
 ## MCP Server
 
-The ticket management MCP server can be run standalone:
+The ticket management MCP server runs on **SSE transport** at `http://127.0.0.1:8765/sse`. It is auto-started by the pipeline on first use — no manual setup needed.
+
+To run it standalone:
 
 ```bash
-python -m src.mcp_server.server
+python src/mcp_server/server.py
 ```
 
 It provides three tools:
 - `create_ticket` - Create a new ticket in SQLite
-- `update_ticket` - Update ticket fields
+- `update_ticket` - Update ticket fields (content, quality review)
 - `get_tickets` - Query tickets with filters
